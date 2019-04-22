@@ -19,27 +19,27 @@ volatile unsigned long count = 0;
  * Set up Timer 1 on Arduino Uno
  *****************************************************************/
 void Timer1_init(int scaler) {
-	/* Configure the normal mode */
-	TCCR1A = 0;
-	TCCR1B = 0;
-	/* Set frequency scaler */
-	byte scaler_mask = 0;
-	switch(scaler) {
-	  case 1: scaler_mask = 0x01; break;
-	  case 8: scaler_mask = 0x02; break;
-	  case 64: scaler_mask = 0x03; break;
-	  case 256: scaler_mask = 0x04; break;
-	  case 1024: scaler_mask = 0x05; break;
-	  default: Serial.print("Wrong scaler!"); break;
-	}
-	TCCR1B |= scaler_mask;
-	Serial.print("Scaler is "); Serial.println(SCALER);
-	Serial.print("Counter frequency is "); Serial.println(cnt_freq);
-	Serial.flush();
-	/* Set counter to 0 */
-	TCNT1 = 0;
-	/* Enable overflow interrupt */
-	TIMSK1 = (1 << TOIE1);
+    /* Configure the normal mode */
+    TCCR1A = 0;
+    TCCR1B = 0;
+    /* Set frequency scaler */
+    byte scaler_mask = 0;
+    switch(scaler) {
+	case 1: scaler_mask = 0x01; break;
+	case 8: scaler_mask = 0x02; break;
+	case 64: scaler_mask = 0x03; break;
+	case 256: scaler_mask = 0x04; break;
+	case 1024: scaler_mask = 0x05; break;
+	default: Serial.print("Wrong scaler!"); break;
+    }
+    TCCR1B |= scaler_mask;
+    Serial.print("Scaler is "); Serial.println(SCALER);
+    Serial.print("Counter frequency is "); Serial.println(cnt_freq);
+    Serial.flush();
+    /* Set counter to 0 */
+    TCNT1 = 0;
+    /* Enable overflow interrupt */
+    TIMSK1 = (1 << TOIE1);
 }
 
 /*****************************************************************
@@ -70,36 +70,36 @@ unsigned int TIM16_ReadTCNT1(void) {
  * Setup
  ****************************************************************/
 void setup() {
-	/* start serial at 115200 baud rate */
-	Serial.begin(115200);
-	/* Init Timer 1 */
-	Timer1_init(SCALER);
+    /* start serial at 115200 baud rate */
+    Serial.begin(115200);
+    /* Init Timer 1 */
+    Timer1_init(SCALER);
 }
 
 /*****************************************************************
  * Main loop
  ****************************************************************/
 void loop() {
-	/* Timer 1 starts from here */
-	// TCNT1 = 0;
+    /* Timer 1 starts from here */
+    // TCNT1 = 0;
     /*********************************************************************************************
      * Measured process - insert your code here.
-	 *********************************************************************************************/
-	for (int i = 0; i < 5000; ++i)
-		delayMicroseconds(800);
+     *********************************************************************************************/
+    for (int i = 0; i < 5000; ++i)
+	delayMicroseconds(800);
     /*********************************************************************************************
      * End of measured process
      *********************************************************************************************/
 
-	/* Disable Timer 1 */
-	TCCR1B = 0;
-	/* Compute execution time */
+    /* Disable Timer 1 */
+    TCCR1B = 0;
+    /* Compute execution time */
     Serial.print("Global count is "); Serial.println(count);
     Serial.print("Timer 1 count is "); Serial.println(TIM16_ReadTCNT1());
-	float time = float(count * OVERFLOW) / cnt_freq;
-	time += float(TIM16_ReadTCNT1()) / cnt_freq;
-	Serial.print("Time (s): "); Serial.println(time, 5);
+    float time = float(count * OVERFLOW) / cnt_freq;
+    time += float(TIM16_ReadTCNT1()) / cnt_freq;
+    Serial.print("Time (s): "); Serial.println(time, 5);
 
-	/* Stop here */
-	while(1);
+    /* Stop here */
+    while(1);
 }
