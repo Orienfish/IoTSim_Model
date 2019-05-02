@@ -1,7 +1,16 @@
 #include <Neurona.h>
 
+/* Specify which serial to use */
+#define mySerial Serial
+
+/* The pin used to trigger power measurement on RPi */
+#define TRI_PIN 2
+
 /* Test times */
 #define RUN_TIME 1000
+
+/* Record start and end time */
+unsigned long stime, etime;
 
 /* Define the network structure */
 #define NET_INPUTS 3
@@ -19,24 +28,27 @@ double netInput[] = {-1.0, 200.0, 75.0, 114.0};
 /* Init MLP */
 MLP mlp(NET_INPUTS,NET_OUTPUTS,layerSizes,MLP::LOGISTIC,initW,true);
 
-/* Record start and end time */
-unsigned long stime, etime;
-
 /*
  * setup
  */
 void setup(){
-    Serial.begin(115200);
+    mySerial.begin(115200);
+    pinMode(TRI_PIN, OUTPUT);
+    digitalWrite(TRI_PIN, LOW); // a pull-down resistor may be needed
 }
 
 /*
  * loop
  */
 void loop(){
+    /* Trigger the power measurement and start timing */
+    digitalWrite(TRI_PIN, HIGH);
     stime = millis();
     for (int i = 0; i < RUN_TIME; ++i)
         mlp.getActivation(netInput);
+    /* Stop timing and stop power measurement */
     etime = millis();
-    Serial.println(etime - stime);
+    digitalWrite(TRI_PIN, LOW);
+    mySerial.println(etime - stime);
     delay(500);
 }
