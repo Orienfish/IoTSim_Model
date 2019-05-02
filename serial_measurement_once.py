@@ -1,3 +1,6 @@
+# For single time power measurement in a serie
+# The measurement will be triggered when the pin is high
+# Stop when the pin return back to low
 import sys
 import os
 import serial, select
