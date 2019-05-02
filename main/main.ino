@@ -14,6 +14,7 @@
 unsigned long cnt_freq = IO_FREQ / SCALER;
 /* Performance count */
 volatile unsigned long count = 0;
+unsigned long stime, etime;
 
 /******************************************************************
  * Set up Timer 1 on Arduino Uno
@@ -73,7 +74,7 @@ void setup() {
     /* start serial at 115200 baud rate */
     Serial.begin(115200);
     /* Init Timer 1 */
-    Timer1_init(SCALER);
+    // Timer1_init(SCALER);
 }
 
 /*****************************************************************
@@ -81,24 +82,28 @@ void setup() {
  ****************************************************************/
 void loop() {
     /* Timer 1 starts from here */
-    // TCNT1 = 0;
+    stime = millis();
     /*********************************************************************************************
      * Measured process - insert your code here.
      *********************************************************************************************/
     for (int i = 0; i < 5000; ++i)
-	delayMicroseconds(800);
+	    delayMicroseconds(800);
     /*********************************************************************************************
      * End of measured process
      *********************************************************************************************/
+    // Option 1: use millis, seems to be more accurate
+    etime = millis();
+    Serial.println(etime - stime);
 
+    // Option 2: use Timer1
     /* Disable Timer 1 */
-    TCCR1B = 0;
+    // TCCR1B = 0;
     /* Compute execution time */
-    Serial.print("Global count is "); Serial.println(count);
-    Serial.print("Timer 1 count is "); Serial.println(TIM16_ReadTCNT1());
-    float time = float(count * OVERFLOW) / cnt_freq;
-    time += float(TIM16_ReadTCNT1()) / cnt_freq;
-    Serial.print("Time (s): "); Serial.println(time, 5);
+    // Serial.print("Global count is "); Serial.println(count);
+    // Serial.print("Timer 1 count is "); Serial.println(TIM16_ReadTCNT1());
+    // float time = float(count * OVERFLOW) / cnt_freq;
+    // time += float(TIM16_ReadTCNT1()) / cnt_freq;
+    // Serial.print("Time (s): "); Serial.println(time, 5);
 
     /* Stop here */
     while(1);
