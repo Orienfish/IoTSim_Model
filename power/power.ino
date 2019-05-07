@@ -42,8 +42,8 @@ void setup(){
  */
 void loop(){
     /* Trigger the power measurement and start timing */
-    digitalWrite(TRI_PIN, HIGH);
     stime = millis();
+    digitalWrite(TRI_PIN, HIGH);
     for (int i = 0; i < RUN_TIME; ++i) {
         int res = mlp.getActivation(netInput);
         // mySerial.print(res); // will cost 100ms in total
