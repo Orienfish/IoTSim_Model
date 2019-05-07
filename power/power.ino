@@ -1,10 +1,13 @@
 #include <Neurona.h>
+#include <SoftwareSerial.h>
 
 /* Specify which serial to use */
-#define mySerial Serial
+// #define mySerial Serial1
+SoftwareSerial mySerial(3, 2); /* RX:D3, TX:D2 */
 
-/* The pin used to trigger power measurement on RPi */
-#define TRI_PIN 2
+/* The pin receive start signal from and send end signal to RPi */
+#define START_SIG_PIN 12
+#define END_SIG_PIN 13
 
 /* Test times */
 #define RUN_TIME 1000
@@ -14,10 +17,11 @@ unsigned long stime, etime;
 
 /* Define the network structure */
 #define NET_INPUTS 3
-#define HIDDEN_LAYER_1 10
-#define HIDDEN_LAYER_2 10
+#define HIDDEN_LAYER_1 20
+#define HIDDEN_LAYER_2 20
+#define HIDDEN_LAYER_3 20
 #define NET_OUTPUTS 10
-int layerSizes[] = {HIDDEN_LAYER_1, HIDDEN_LAYER_2, NET_OUTPUTS, -1};
+int layerSizes[] = {HIDDEN_LAYER_1, HIDDEN_LAYER_2, HIDDEN_LAYER_3, NET_OUTPUTS, -1};
 /* PROGMEM: store data in flash. The number of weights can be more or less than the network requirement */
 double PROGMEM const initW[] = {2.753086,-11.472257,-3.311738,16.481226,19.507006,20.831778,7.113330,-6.423491,1.907215,6.495393,-27.712126,26.228203,-0.206367,-5.724560,-22.278070,
 30.065610,6.139262,-10.814282,28.513130,-9.784946,6.467021,0.055005,3.730361,4.145092,2.479019,0.013003,-3.582416,-16.364391,14.133357,-5.089288,1.637492,5.894826,1.415764,-3.315533,14.814289,
@@ -28,30 +32,52 @@ double netInput[] = {-1.0, 200.0, 75.0, 114.0};
 /* Init MLP */
 MLP mlp(NET_INPUTS,NET_OUTPUTS,layerSizes,MLP::LOGISTIC,initW,true);
 
+/* Factorial function */
+float factorial(unsigned int i)
+{
+   if(i <= 1)
+   {
+      return 1;
+   }
+   return i * factorial(i - 1);
+}
+
 /*
  * setup
  */
 void setup(){
     mySerial.begin(115200);
-    pinMode(TRI_PIN, OUTPUT);
-    digitalWrite(TRI_PIN, LOW); // a pull-down resistor may be needed
+    pinMode(START_SIG_PIN, INPUT);
+    pinMode(END_SIG_PIN, OUTPUT);
+    digitalWrite(END_SIG_PIN, LOW); // Init end_sig_pin to low
 }
 
 /*
  * loop
  */
 void loop(){
-    /* Trigger the power measurement and start timing */
-    digitalWrite(TRI_PIN, HIGH);
+    /* Wait for the trigger start signal from RPi */
+    mySerial.print("Waiting for start signal...");
+    while (digitalRead(START_SIG_PIN) == 0);
+    /* start timing */
     stime = millis();
-    for (int i = 0; i < RUN_TIME; ++i) {
-        int res = mlp.getActivation(netInput);
+
+    /* Test 1: Running MLP */
+    // for (int i = 0; i < RUN_TIME; ++i) {
+    //    int res = mlp.getActivation(netInput);
         // mySerial.print(res); // will cost 100ms in total
-    }
+    //}
+
+    /* Test 2: Being idle for 30 secs*/
+    // delay(30000);
+
+    /* Test 3: Running simple loop of calculations */
+    for (int i = 0; i < 5000; ++i)
+      float f = factorial(200);
+    
     /* Stop timing and stop power measurement */
-    etime = millis();
-    digitalWrite(TRI_PIN, LOW);
-    mySerial.println();      
+    digitalWrite(END_SIG_PIN, HIGH);
+    etime = millis();    
     mySerial.println(etime - stime);
     while(1);
 }
