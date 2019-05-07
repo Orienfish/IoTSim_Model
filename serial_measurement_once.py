@@ -9,9 +9,15 @@ import signal
 import datetime
 import RPi.GPIO as GPIO
 
-# Use pin 18 (BCM) as trigger with pull-down resistor
+# Use pin 23 (BCM) to send the start signal to Arduino
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+START_SIG_PIN = 12
+GPIO.setup(START_SIG_PIN, GPIO.OUT)
+GPIO.output(START_SIG_PIN, GPIO.LOW)
+# Use pin 18 (BCM) to receive the end signal from Adruino
+# Use internal pull-up resistor
+END_SIG_PIN = 18
+GPIO.setup(END_SIG_PIN, GPIO.IN) 
 
 bSignaled = False
 def signal_handler(signal, frame):
@@ -82,8 +88,9 @@ ii = 0
 data = ""
 bTypeError = False
 
-# wait for the trigger to start
-while !GPIO.input(18);
+print("Start measurement...\r\n")
+# send start signal to Arduino
+GPIO.output(START_SIG_PIN, GPIO.HIGH)
 # start power measurement
 while True:
 	if bNeedtoMeasure == True:
@@ -128,7 +135,7 @@ while True:
 
 		if bSignaled or elapsed_time() >= execution_time_in_ms:
 			break
-		if GPIO.input(18): # if the trigger goes back to HIGH, end measurement
+		if (GPIO.input(END_SIG_PIN) == 1): # if the trigger goes back to HIGH, end measurement
 			break
 
 		bTypeError = False
@@ -138,3 +145,5 @@ while True:
 psu.close()
 if f is not None:
 	f.close()
+GPIO.output(START_SIG_PIN, GPIO.LOW)
+print("Measurement ends!\r\n")
