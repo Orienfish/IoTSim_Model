@@ -10,6 +10,7 @@
 import sys
 import os
 
+# read the time and power list from file
 def read_txt(filename):
 	with open(filename) as f:
 		lines = f.readlines()
@@ -26,6 +27,7 @@ def read_txt(filename):
 
 	return time, power
 
+# compute the total energy and avg power for this file
 def compute_energy(time, power):
 	prev_t = 0
 	energy = 0
@@ -38,7 +40,7 @@ def compute_energy(time, power):
 	print energy, avgpower
 	return energy, avgpower 
 
-
+# main
 def main():
 	filelist = []
 	if len(sys.argv) == 2: # include file name
