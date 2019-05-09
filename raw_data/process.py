@@ -10,6 +10,8 @@
 import sys
 import os
 
+ambient_power = 0.0496575499099
+
 # read the time and power list from file
 def read_txt(filename):
 	with open(filename) as f:
@@ -53,7 +55,8 @@ def main():
 		time, power = read_txt(filename)
 		energy, avgpower = compute_energy(time, power)
 		print "For filename %s: energy %f (J), avg power %f (W)" \
-			% (filename, energy, avgpower)
+		% (filename, energy, avgpower)
+		print "subtract ambient %f (W)" % (avgpower - ambient_power)
 
 
 if __name__ == '__main__':
