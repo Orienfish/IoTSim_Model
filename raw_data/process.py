@@ -52,7 +52,7 @@ def main():
 	for filename in filelist:
 		time, power = read_txt(filename)
 		energy, avgpower = compute_energy(time, power)
-		print "For filename %s: energy %f (J), avg power %f (J)" \
+		print "For filename %s: energy %f (J), avg power %f (W)" \
 			% (filename, energy, avgpower)
 
 
