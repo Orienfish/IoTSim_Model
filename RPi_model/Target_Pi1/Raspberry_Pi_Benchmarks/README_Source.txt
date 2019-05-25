@@ -4,7 +4,8 @@ http://www.roylongbottom.org.uk/Raspberry%20Pi%20Benchmarks.htm
 Single thread: whetstone, dhrystone, linpack
 Multi-thread: MP-MFLOPSPiA7, MP-whet, MP-dhry
 
-Usage: ./test.sh
+Usage:  ./compile.sh
+	./run.sh
 With default settings, default run time is around 150s
 
 Modifications:
