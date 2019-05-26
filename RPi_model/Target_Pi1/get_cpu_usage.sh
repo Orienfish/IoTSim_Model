@@ -1,6 +1,6 @@
 #!/bin/bash
 # Make the total cpu utilization measurement
-# When sleep duration is 0.15s, the sampling interval is about 0.2s
+# When sleep duration is 0.05s, the sampling interval is about 0.2s
 cpu="cpu"
 sleepDurationSeconds=$1
 # taken the previous measurement
@@ -56,6 +56,7 @@ while true; do
     CPU_Freq=$(echo "$CPU_Freq_List" | awk -F " " '{ total += $1; count++ } END { print total/count }')
     diffTime=$(echo "$currentDate-$previousDate" | bc)
     echo "$CPU_Freq,$CPU_Percentage"
+    echo "$diffTime"
 
     # prepare for the next round
     prevuser=$user
