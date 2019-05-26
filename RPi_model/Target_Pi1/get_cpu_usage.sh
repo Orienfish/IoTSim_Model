@@ -56,7 +56,7 @@ while true; do
     CPU_Freq=$(echo "$CPU_Freq_List" | awk -F " " '{ total += $1; count++ } END { print total/count }')
     diffTime=$(echo "$currentDate-$previousDate" | bc)
     echo "$CPU_Freq,$CPU_Percentage"
-    echo "$diffTime"
+    # echo "$diffTime"
 
     # prepare for the next round
     prevuser=$user
