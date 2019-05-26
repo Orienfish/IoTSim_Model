@@ -12,6 +12,8 @@ from sklearn.linear_model import LinearRegression
 from lib.perf_reader import PerfOnlineReader
 from lib.multimeter import MultiMeter
 
+VERSION="simple"
+
 #####################################################################
 def save_with_pickle(data, filename):
     """ save data to a file for future processing"""
@@ -42,7 +44,7 @@ def save_csv(filename, keys, data_matrix):
 #####################################################################
 
 ####################################################################
-def pmu_callback(pmu_dict):
+def cpu_callback(pmu_dict):
     if pmu_callback.label_list is None: # first sample
         pmu_callback.label_list = ["time"]
         pmu_callback.label_list += sorted(list(pmu_dict.keys()))
@@ -53,7 +55,7 @@ def pmu_callback(pmu_dict):
     if pwr_callback.start_time is None:
         return
     
-    new_vec = np.zeros((1 + len(pmu_dict)))
+    new_vec = np.zeros((1 + len(pmu_dict))) # [time, freq, util]
     # record the received time
     new_vec[0] = float(time.time() * 1000 - pwr_callback.start_time) / 1000
     for evt in pmu_dict:
@@ -138,7 +140,7 @@ def align_samples(target_ts, ts, vs):
 
 EVT_RATIO = 0.5
 COMBINE_PP = False
-PLOT_TYPES = ["MP", "PP", "inst", "cmss"]
+PLOT_TYPES = ["MP", "PP", "freq", "util"]
 MAX_TIME = 120.0
 
 def animate_plot():
@@ -161,8 +163,8 @@ def animate_plot():
     line, = ax_dict["MP"].plot(ts, [0.0] * len(ts), color="b")
     line2, = ax_dict["PP"].plot(ts, [0.0] * len(ts), color="r")
 
-    line_inst, = ax_dict["inst"].plot(ts, [0.0] * len(ts), color="g")
-    line_cmss, = ax_dict["cmss"].plot(ts, [0.0] * len(ts), color="purple")
+    line_freq, = ax_dict["freq"].plot(ts, [0.0] * len(ts), color="g")
+    line_util, = ax_dict["util"].plot(ts, [0.0] * len(ts), color="purple")
 
     def set_pmu_line(line, name, pmu_array):
         lidx = pmu_callback.label_list.index(name)
@@ -193,8 +195,8 @@ def animate_plot():
         line2.set_ydata(pred_pwr_array[:,1])
 
         if pmu_callback.label_list is not None: 
-            set_pmu_line(line_inst, 'instructions', pmu_array)
-            set_pmu_line(line_cmss, 'cache-misses', pmu_array)
+            set_pmu_line(line_freq, 'freq', pmu_array)
+            set_pmu_line(line_util, 'util', pmu_array)
 
         return line, line2, line_inst, line_cmss
 
@@ -216,15 +218,15 @@ def animate_plot():
         ax_dict["PP"].set_title("Power (Prediction)")
         ax_dict["PP"].set_ylabel("Power (W)")
 
-    ax_dict["inst"].set_xlim(5.0, MAX_TIME)
-    ax_dict["inst"].set_ylim(0.0, 30000000000.00)
-    ax_dict["inst"].set_title("PMU - Instructions")
-    ax_dict["inst"].set_ylabel("Instructions")
+    ax_dict["freq"].set_xlim(5.0, MAX_TIME)
+    ax_dict["freq"].set_ylim(0.0, 30000000000.00)
+    ax_dict["freq"].set_title("PMU - Instructions")
+    ax_dict["freq"].set_ylabel("Instructions")
 
-    ax_dict["cmss"].set_xlim(5.0, MAX_TIME)
-    ax_dict["cmss"].set_ylim(0.0, 100000000.00)
-    ax_dict["cmss"].set_title("PMU - Cache misses")
-    ax_dict["cmss"].set_ylabel("Cache misses")
+    ax_dict["util"].set_xlim(5.0, MAX_TIME)
+    ax_dict["util"].set_ylim(0.0, 100000000.00)
+    ax_dict["util"].set_title("PMU - Cache misses")
+    ax_dict["util"].set_ylabel("Cache misses")
 
     plt.xlabel("Time (sec)")
     plt.tight_layout(pad=0.0, w_pad=0.0, h_pad=0.0)
