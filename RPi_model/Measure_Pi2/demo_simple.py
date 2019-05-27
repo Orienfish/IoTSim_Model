@@ -208,25 +208,25 @@ def animate_plot():
             interval=500, blit=True) # 1000 frames
 
     ax_dict["MP"].set_xlim(5.0, MAX_TIME)
-    ax_dict["MP"].set_ylim(400.0, 550.0)
+    ax_dict["MP"].set_ylim(3.0, 5.0)
     ax_dict["MP"].set_title("Power (Measurement)")
     ax_dict["MP"].set_ylabel("Power (W)")
 
     if "PP" in ax_dict:
         ax_dict["PP"].set_xlim(5.0, MAX_TIME)
-        ax_dict["PP"].set_ylim(400.0, 550.0)
+        ax_dict["PP"].set_ylim(3.0, 5.0)
         ax_dict["PP"].set_title("Power (Prediction)")
         ax_dict["PP"].set_ylabel("Power (W)")
 
     ax_dict["freq"].set_xlim(5.0, MAX_TIME)
-    ax_dict["freq"].set_ylim(0.0, 30000000000.00)
-    ax_dict["freq"].set_title("PMU - Instructions")
+    ax_dict["freq"].set_ylim(0.0, 1500000.00)
+    ax_dict["freq"].set_title("PMU - Frequency")
     ax_dict["freq"].set_ylabel("Instructions")
 
     ax_dict["util"].set_xlim(5.0, MAX_TIME)
-    ax_dict["util"].set_ylim(0.0, 100000000.00)
-    ax_dict["util"].set_title("PMU - Cache misses")
-    ax_dict["util"].set_ylabel("Cache misses")
+    ax_dict["util"].set_ylim(0.0, 100.00)
+    ax_dict["util"].set_title("PMU - CPU Utilization")
+    ax_dict["util"].set_ylabel("CPU Utilization")
 
     plt.xlabel("Time (sec)")
     plt.tight_layout(pad=0.0, w_pad=0.0, h_pad=0.0)

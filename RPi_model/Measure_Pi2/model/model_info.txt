@@ -1,0 +1,10 @@
+Coefficients of ./model/model.tmp.pmu.15332105272019
+cache-misses: 2.25256721883e-07 instructions: 3.60752851545e-09 intercept: 3.37150089768
+Score: 0.850968
+Coefficients of ./model/model.pmu.15433205272019
+cache-misses: 4.51474061283e-08 instructions: 2.39125710532e-09 intercept: 3.71472433709
+Score: 0.778752
+Coefficients of ./model/model.pmu.15500705272019
+cache-misses: 4.30582442849e-08 instructions: 2.49245116494e-09 intercept: 3.69531817383
+Score: 0.777976
+

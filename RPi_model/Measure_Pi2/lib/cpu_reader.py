@@ -12,9 +12,9 @@ import time
 #        "/home/pietro/spec2006/perf_demo.sh"
 #DEF_KILL_CMD = "ssh pietro@132.239.17.46 \"bash -c 'sudo killall -9 gcc'\""
 
-DEF_EXEC_CMD = "ssh pi@132.239.17.47 " + \
+DEF_EXEC_CMD = "ssh pi@192.168.1.57 " + \
         "/home/pi/Desktop/IoTSim_Model/RPi_model/Target_Pi1/get_cpu_usage.sh 0.05" # 0.2 sampling interval
-DEF_KILL_CMD = "ssh pi@132.239.17.47 \"bash -c 'sudo kill -9 $(pgrep get_cpu_usage.sh)'\""
+DEF_KILL_CMD = "ssh pi@192.168.1.57 \"bash -c 'sudo kill -9 $(pgrep get_cpu_usage.sh)'\""
 
 
 def sig_handler(signum, _):
