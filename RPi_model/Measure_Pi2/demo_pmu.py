@@ -142,7 +142,7 @@ def align_samples(target_ts, ts, vs):
 ###################################################################
 
 EVT_RATIO = 0.5
-COMBINE_PP = False
+COMBINE_PP = True
 PLOT_TYPES = ["MP", "PP", "inst", "cmss"]
 MAX_TIME = 120.0
 
@@ -211,13 +211,13 @@ def animate_plot():
             interval=500, blit=True) # 1000 frames
 
     ax_dict["MP"].set_xlim(5.0, MAX_TIME)
-    ax_dict["MP"].set_ylim(3.0, 5.0)
+    ax_dict["MP"].set_ylim(3.0, 6.0)
     ax_dict["MP"].set_title("Power (Measurement)")
     ax_dict["MP"].set_ylabel("Power (W)")
 
     if "PP" in ax_dict:
         ax_dict["PP"].set_xlim(5.0, MAX_TIME)
-        ax_dict["PP"].set_ylim(3.0, 5.0)
+        ax_dict["PP"].set_ylim(3.0, 6.0)
         ax_dict["PP"].set_title("Power (Prediction)")
         ax_dict["PP"].set_ylabel("Power (W)")
 

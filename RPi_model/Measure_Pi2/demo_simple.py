@@ -9,7 +9,7 @@ import sklearn
 import cPickle as pickle
 from sklearn.linear_model import LinearRegression
 
-from lib.perf_reader import PerfOnlineReader
+from lib.cpu_reader import PerfOnlineReader
 from lib.multimeter import MultiMeter
 
 VERSION="simple"
@@ -44,10 +44,13 @@ def save_csv(filename, keys, data_matrix):
 #####################################################################
 
 ####################################################################
-def cpu_callback(pmu_dict):
+def pmu_callback(pmu_dict):
     if pmu_callback.label_list is None: # first sample
         pmu_callback.label_list = ["time"]
         pmu_callback.label_list += sorted(list(pmu_dict.keys()))
+
+    for key in pmu_dict:
+    	print key, pmu_dict[key]
 
     if len(pmu_dict) != len(pmu_callback.label_list) - 1:
         print("PMU measurement error")
@@ -139,7 +142,7 @@ def align_samples(target_ts, ts, vs):
 ###################################################################
 
 EVT_RATIO = 0.5
-COMBINE_PP = False
+COMBINE_PP = True
 PLOT_TYPES = ["MP", "PP", "freq", "util"]
 MAX_TIME = 120.0
 
@@ -176,17 +179,17 @@ def animate_plot():
         meas_pwr_array = np.array(list(pwr_callback.train_data))
         pred_pwr_array = np.array(list(pmu_callback.pred_pwr_list))
         pmu_array = np.array(list(pmu_callback.train_data))
-        #print(meas_pwr_array.shape)
-        #print(pred_pwr_array.shape)
+        # print(meas_pwr_array.shape)
+        # print(pred_pwr_array.shape)
 
         if len(meas_pwr_array) == 0 or len(pred_pwr_array) == 0:
-            return line, line2, line_inst, line_cmss
+            return line, line2, line_freq, line_util
 
         last_pred_time = pred_pwr_array[:,0][-1]
         meas_pwr_array = meas_pwr_array[[meas_pwr_array[:,0] < last_pred_time]]
 
         if len(meas_pwr_array) == 0 or len(pred_pwr_array) == 0:
-            return line, line2, line_inst, line_cmss
+            return line, line2, line_freq, line_util
 
         line.set_xdata(meas_pwr_array[:,0])
         line.set_ydata(meas_pwr_array[:,1])
@@ -198,23 +201,23 @@ def animate_plot():
             set_pmu_line(line_freq, 'freq', pmu_array)
             set_pmu_line(line_util, 'util', pmu_array)
 
-        return line, line2, line_inst, line_cmss
+        return line, line2, line_freq, line_util
 
     def init():
-        return line, line2, line_inst, line_cmss
+        return line, line2, line_freq, line_util
 
     ani = animation.FuncAnimation(
             fig, animate, np.arange(1, 1000), init_func=init,
             interval=500, blit=True) # 1000 frames
 
     ax_dict["MP"].set_xlim(5.0, MAX_TIME)
-    ax_dict["MP"].set_ylim(3.0, 5.0)
+    ax_dict["MP"].set_ylim(3.0, 6.0)
     ax_dict["MP"].set_title("Power (Measurement)")
     ax_dict["MP"].set_ylabel("Power (W)")
 
     if "PP" in ax_dict:
         ax_dict["PP"].set_xlim(5.0, MAX_TIME)
-        ax_dict["PP"].set_ylim(3.0, 5.0)
+        ax_dict["PP"].set_ylim(3.0, 6.0)
         ax_dict["PP"].set_title("Power (Prediction)")
         ax_dict["PP"].set_ylabel("Power (W)")
 
@@ -279,15 +282,28 @@ def main():
             [vec for vec in data_matrix if not any(np.isnan(vec))]
             )
 
-    save_csv("measurement.csv", pmu_callback.label_list + ["power"], data_matrix)
+    pmu_callback.label_list.remove("time")
+    save_csv("measurement_"+VERSION+".csv", pmu_callback.label_list + ["power"], data_matrix)
     clf = LinearRegression()
-    clf.fit(data_matrix[:, :n_evt], data_matrix[:, n_evt])
-    print(clf.score(data_matrix[:, :n_evt], data_matrix[:, n_evt]))
+    reg = clf.fit(data_matrix[:, :n_evt], data_matrix[:, n_evt])
+    score = clf.score(data_matrix[:, :n_evt], data_matrix[:, n_evt])
+    print("Score: %f" %score)
 
     # Save model
-    save_with_pickle(
-            clf, filename + "." + \
-                    datetime.datetime.now().strftime("%H%M%S%m%d%Y") + ".new")
+    new_model = "./model/model." + VERSION + "." + \
+    	datetime.datetime.now().strftime("%H%M%S%m%d%Y")
+    save_with_pickle(clf, new_model)
+    print "model save to", new_model
+
+    # Save coefficients
+    with open("./model/model_info.txt", "a+") as f:
+	f.write("Coefficients of %s\r\n" %new_model)
+	for i in range(0, n_evt): # ["cache-misses", "instructions"]
+	    f.write("%s: " %pmu_callback.label_list[i])
+	    f.write("%s " %reg.coef_[i])
+	f.write("intercept: ")
+	f.write("%s" %reg.intercept_)
+	f.write("\r\nScore: %f\r\n" %score)
 
 if __name__ == '__main__':
     main()
