@@ -1,0 +1,15 @@
+Coefficients of ./model/model.simple.17195905272019
+freq: 1.88698099331e-07 temp: -1.66376383067e-05 util: -0.0554750589078 intercept: 5.87840845088
+Score: 0.677362
+Coefficients of ./model/model.simple.17213005272019
+freq: 2.35150431445e-07 temp: 1.00117772468e-05 util: -0.0428072394362 intercept: 3.98989608944
+Score: 0.658373
+Coefficients of ./model/model.simple.17252405272019
+freq: 2.49196198239e-07 temp: 1.52907280968e-05 util: -0.042526900072 intercept: 3.644911376
+Score: 0.661846
+Coefficients of ./model/model.simple.17284005272019
+freq: 2.60009864331e-07 temp: 5.63431241908e-05 util: -0.0266423388662 intercept: 0.790841175742
+Score: 0.571285
+Coefficients of ./model/model.simple.17324605272019
+freq: 5.49803325937e-07 temp: 4.40441287302e-06 util: 0.021888680575 intercept: 2.63494519813
+Score: 0.863428
