@@ -128,3 +128,1043 @@ From File /proc/version
 Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
  
 
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 15:35:55 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   948.2  328.2  336.2  299.6  18.5  10.51383423.2 1770.7  880.0
+ 2T  1887.4  670.8  665.2  598.1  36.9  20.92143983.8 3542.9 1786.6
+ 4T  2892.5 1085.6 1112.0  901.5  57.0  31.93552111.2 5948.0 2751.2
+ 8T  #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 15:36:15 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   928.9  319.9  313.9  289.6  18.3  10.41479922.0 1479.9  882.6
+ 2T  1764.8  464.5  660.7  532.5  35.3  19.82368718.5 2902.8 1453.5
+ 4T  2648.3 1220.0 1228.8  973.5  59.5  23.93430594.0 6615.9 2061.4
+
+   Overall Seconds   4.99 1T,   5.02 2T,   7.07 4T,  15.73 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 15:36:28 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T  2415.2  640.9  585.5  967.3  41.6  30.81406847.6 3530.2 2799.6
+ 8T   923.1  469.4  504.4  245.4  18.3  10.51169817.6 1562.7 1126.0
+ 2T  1688.6  857.6  745.3  450.5  34.5  18.81090621.1 2744.1 2141.5
+ 4T  1785.0 1028.5 1029.8  533.4  35.0  19.11774762.1 3367.8 2263.2
+ 8T  1864.7 1137.6  978.0  581.6  37.6  19.33357707.4 4624.0 1721.9
+
+   Overall Seconds   4.65 1T,   5.14 2T,   7.63 4T,  18.76 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 15:36:52 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   835.0  380.9  458.2  225.7  16.1   9.7905441.7 1442.1 1066.9
+ 2T  1510.8  899.6  719.2  394.1  31.1  16.91384832.8 2390.7 1635.4
+ 4T  2139.1  916.7 1015.7  843.8  42.7  20.64709464.2 3330.8 2645.5
+
+   Overall Seconds   4.40 1T,   4.88 2T,   9.33 4T,  16.24 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ 2164.5  757.4  845.3  675.4  38.0  27.91657343.2 3396.0 3261.6
+ 8T  2486.7 1638.7 1714.6  712.0  48.9  26.82444513.6 5025.2 3528.3
+
+   Overall Seconds   4.20 1T,   4.88 2T,   7.22 4T,  11.74 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 15:42:27 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   944.1  270.4  335.6  299.4  18.4  10.51166859.3 1787.6  898.1
+ 2T  1888.9  664.8  666.5  598.4  37.0  20.91997791.0 3573.7 1781.2
+ 4T  3758.9 1320.8 1331.7 1192.3  73.6  41.63512912.8 7089.7 3573.7
+ 8T  3901.2 1643.9 1733.5 1258.3  75.3  42.83701571.1 8918.3 3692.7
+
+   Overall Seconds   5.03 1T,   5.01 2T,   5.09 4T,  10.21 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 15:42:53 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   938.6  509.9  516.9  253.1  18.3  10.71275870.3 1781.3 1198.0
+ 2T  1885.4 1028.4 1034.1  507.8  37.1  21.32362145.0 3474.2 2381.8
+ 4T  3742.1 2019.4 2054.5 1022.1  73.5  42.13309272.9 7075.0 4762.7
+ 8T  3886.8 2687.7 2739.5 1047.7  75.1  44.33441435.4 9252.3 5176.0
+
+   Overall Seconds   4.97 1T,   4.97 2T,   5.05 4T,  10.06 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 15:48:49 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   944.1  333.5  336.2  295.8  18.5  10.51175438.9 1788.3  896.7
+ 2T  1890.4  665.4  669.0  598.7  36.8  21.02396641.5 3548.4 1781.4
+ 4T  3774.9 1306.9 1336.6 1191.6  73.9  41.93235285.9 7122.9 3578.2
+ 8T  3845.3 1494.9 1739.8 1212.0  74.2  42.53801941.0 9299.3 3705.1
+
+   Overall Seconds   5.00 1T,   5.02 2T,   5.06 4T,  10.10 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 15:49:14 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   944.0  517.3  514.8  256.4  18.5  10.7729511.4 1792.4 1197.8
+ 2T  1886.4 1022.1 1025.4  512.1  37.0  21.32147011.7 3588.6 2395.2
+ 4T  3750.2 2020.2 1941.6 1014.3  73.9  42.54434833.7 7135.4 4719.6
+ 8T  3867.3 2519.9 2679.6 1057.2  74.9  43.64717790.5 8534.8 5235.7
+
+   Overall Seconds   4.98 1T,   5.00 2T,   5.11 4T,  10.13 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 16:19:25 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   892.4  331.4  332.2  285.7  17.1  10.01004576.9 1660.8  819.3
+ 2T  1759.7  666.2  652.2  567.4  33.5  20.0828696.8 3238.1 1618.6
+ 4T  3071.4 1129.3 1090.6  991.1  59.2  34.51936418.7 5531.1 2876.4
+ 8T  3283.5 1344.2 1340.9 1152.5  60.9  37.64060616.8 6642.7 3292.0
+
+   Overall Seconds   4.89 1T,   5.00 2T,   5.90 4T,  11.73 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 16:19:53 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   887.5  500.0  493.7  254.3  16.9  10.11428124.1 1648.9 1080.8
+ 2T  1778.2  950.9  971.2  501.1  34.2  20.31577232.2 3290.8 2180.3
+ 4T  3068.4 1704.5 1643.1  843.4  59.6  35.02471637.5 5975.3 3827.6
+ 8T  3043.1 1861.3 2288.1  908.9  60.3  31.64225093.0 7412.6 4447.0
+
+   Overall Seconds   5.01 1T,   5.04 2T,   5.95 4T,  12.53 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 16:23:31 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   896.8  333.3  335.0  287.5  17.3  10.01175508.9 1581.2  816.4
+ 2T  1782.0  667.6  665.3  574.1  34.5  19.7790477.3 3287.0 1641.1
+ 4T  3087.4 1107.1 1152.7  987.1  59.6  34.53105144.4 5777.3 2860.8
+ 8T  3141.3 1420.8 1387.6 1035.1  61.9  33.4371243.4 7282.1 2887.7
+
+   Overall Seconds   4.96 1T,   5.00 2T,   6.10 4T,  12.28 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 16:24:00 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   888.9  455.5  459.4  249.8  17.1  10.2814202.4 1609.0 1083.6
+ 2T  1779.1  968.5  995.3  505.7  34.2  20.12194817.0 3126.5 2167.7
+ 4T  2928.7 1658.2 1838.5  821.6  59.0  31.33245463.5 4865.2 3651.5
+ 8T  2752.8 1877.4 1943.8  815.1  54.5  29.11913639.7 6033.0 3531.9
+
+   Overall Seconds   4.38 1T,   4.41 2T,   5.46 4T,  12.23 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 16:34:38 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   870.8  332.5  324.0  283.9  16.7   9.8410774.9 1546.8  775.8
+ 2T  1725.2  657.6  660.7  559.9  32.9  19.41267558.0 3079.1 1532.9
+ 4T  2865.8 1043.7 1055.4  922.2  54.8  32.32628310.0 5546.9 2676.0
+ 8T  2905.3 1257.2 1243.2  958.6  58.2  30.62668449.5 5907.3 2711.0
+
+   Overall Seconds   4.93 1T,   5.03 2T,   6.22 4T,  13.10 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 16:35:08 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   852.9  456.4  456.1  255.4  15.8   9.9379138.7 1402.0 1027.9
+ 2T  1719.3  972.3  975.0  497.2  32.9  19.4998362.9 3062.1 2080.7
+ 4T  2553.1 1628.0 1625.4  750.7  50.9  26.9844219.5 4951.4 3230.2
+ 8T  2430.5 1540.4 1628.4  720.1  47.1  26.33193351.8 5948.6 3170.2
+
+   Overall Seconds   4.60 1T,   4.59 2T,   6.38 4T,  13.83 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 17:30:11 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   893.2  332.0  302.7  288.8  17.3  10.01227577.0 1545.6  817.8
+ 2T  1783.4  665.5  656.6  571.8  34.4  19.92254996.8 3327.3 1618.0
+ 4T  3059.0 1094.5 1125.0  971.9  59.2  34.22697879.9 6042.4 2885.9
+ 8T  3273.6 1338.2 1523.9 1052.2  61.8  37.22179768.0 7144.1 2950.8
+
+   Overall Seconds   4.96 1T,   5.00 2T,   6.01 4T,  11.96 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+  MP-Whetstone Benchmark Linux/ARM V7A v1.0 Mon May 27 17:30:39 2019
+
+                    Using 1, 2, 4 and 8 Threads
+
+      MWIPS MFLOPS MFLOPS MFLOPS   Cos   Exp  Fixpt     If  Equal
+                 1      2      3  MOPS  MOPS   MOPS   MOPS   MOPS
+
+ 1T   896.6  505.7  497.2  255.8  17.2  10.2521750.0 1618.0 1056.6
+ 2T  1783.1  964.3  953.0  509.8  34.3  20.11273357.9 3270.8 2199.1
+ 4T  3068.3 1642.3 1695.2  842.8  59.6  35.01605455.3 5805.4 3777.0
+ 8T  3070.6 2117.0 1936.7  906.3  59.7  33.83022586.7 6948.8 3916.0
+
+   Overall Seconds   4.96 1T,   4.99 2T,   6.00 4T,  12.56 8T
+
+   All calculations produced consistent numeric results
+
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
