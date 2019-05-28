@@ -12,9 +12,9 @@ import time
 #        "/home/pietro/spec2006/perf_demo.sh"
 #DEF_KILL_CMD = "ssh pietro@132.239.17.46 \"bash -c 'sudo killall -9 gcc'\""
 
-DEF_EXEC_CMD = "ssh pi@132.239.17.47 " + \
-        "/home/pi/Desktop/IoTSim_Model/RPi_model/Target_Pi1/perf_script.sh"
-DEF_KILL_CMD = "ssh pi@132.239.17.47 \"bash -c 'sudo kill -9 $(pgrep perf_script.sh)'\""
+DEF_EXEC_CMD = "ssh pi@192.168.1.57 " + \
+        "bash -c /home/pi/Desktop/IoTSim_Model/RPi_model/Target_Pi1/perf_script.sh"
+DEF_KILL_CMD = "ssh pi@192.168.1.57 \"bash -c 'sudo killall -9 bash'\""
 
 
 def sig_handler(signum, _):

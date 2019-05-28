@@ -49,6 +49,9 @@ def pmu_callback(pmu_dict):
         pmu_callback.label_list = ["time"]
         pmu_callback.label_list += sorted(list(pmu_dict.keys()))
 
+    # for key in pmu_dict:
+    #	print key, pmu_dict[key]
+
     if len(pmu_dict) != len(pmu_callback.label_list) - 1:
         print("PMU measurement error")
         return
@@ -139,7 +142,7 @@ def align_samples(target_ts, ts, vs):
 ###################################################################
 
 EVT_RATIO = 0.5
-COMBINE_PP = False
+COMBINE_PP = True
 PLOT_TYPES = ["MP", "PP", "inst", "cmss"]
 MAX_TIME = 120.0
 
@@ -208,23 +211,23 @@ def animate_plot():
             interval=500, blit=True) # 1000 frames
 
     ax_dict["MP"].set_xlim(5.0, MAX_TIME)
-    ax_dict["MP"].set_ylim(400.0, 550.0)
+    ax_dict["MP"].set_ylim(3.0, 6.0)
     ax_dict["MP"].set_title("Power (Measurement)")
     ax_dict["MP"].set_ylabel("Power (W)")
 
     if "PP" in ax_dict:
         ax_dict["PP"].set_xlim(5.0, MAX_TIME)
-        ax_dict["PP"].set_ylim(400.0, 550.0)
+        ax_dict["PP"].set_ylim(3.0, 6.0)
         ax_dict["PP"].set_title("Power (Prediction)")
         ax_dict["PP"].set_ylabel("Power (W)")
 
     ax_dict["inst"].set_xlim(5.0, MAX_TIME)
-    ax_dict["inst"].set_ylim(0.0, 30000000000.00)
+    ax_dict["inst"].set_ylim(0.0, 500000000.00)
     ax_dict["inst"].set_title("PMU - Instructions")
     ax_dict["inst"].set_ylabel("Instructions")
 
     ax_dict["cmss"].set_xlim(5.0, MAX_TIME)
-    ax_dict["cmss"].set_ylim(0.0, 100000000.00)
+    ax_dict["cmss"].set_ylim(0.0, 500000.00)
     ax_dict["cmss"].set_title("PMU - Cache misses")
     ax_dict["cmss"].set_ylabel("Cache misses")
 
@@ -252,7 +255,7 @@ def main():
 
     animate_plot()
 
-    #time.sleep(10)
+    # time.sleep(10)
     reader.wait()
 
     reader.finish()
@@ -279,15 +282,28 @@ def main():
             [vec for vec in data_matrix if not any(np.isnan(vec))]
             )
 
+    pmu_callback.label_list.remove("time") # leave only events
     save_csv("measurement_"+VERSION+".csv", pmu_callback.label_list + ["power"], data_matrix)
     clf = LinearRegression()
-    clf.fit(data_matrix[:, :n_evt], data_matrix[:, n_evt])
-    print(clf.score(data_matrix[:, :n_evt], data_matrix[:, n_evt]))
+    reg = clf.fit(data_matrix[:, :n_evt], data_matrix[:, n_evt])
+    score = clf.score(data_matrix[:, :n_evt], data_matrix[:, n_evt])
+    print("Score: %f" %score)
 
     # Save model
-    save_with_pickle(
-            clf, filename + "." + VERSION + "." + \
-                    datetime.datetime.now().strftime("%H%M%S%m%d%Y") + ".new")
+    new_model = "./model/model." + VERSION + "." + \
+    	datetime.datetime.now().strftime("%H%M%S%m%d%Y")
+    save_with_pickle(clf, new_model)
+    print "model save to", new_model
+
+    # Save coefficients
+    with open("./model/model_info.txt", "a+") as f:
+	f.write("Coefficients of %s\r\n" %new_model)
+	for i in range(0, n_evt): # ["cache-misses", "instructions"]
+	    f.write("%s: " %pmu_callback.label_list[i])
+	    f.write("%s " %reg.coef_[i])
+	f.write("intercept: ")
+	f.write("%s" %reg.intercept_)
+	f.write("\r\nScore: %f\r\n" %score)
 
 if __name__ == '__main__':
     main()
