@@ -9,10 +9,10 @@ import sklearn
 import cPickle as pickle
 from sklearn.linear_model import LinearRegression
 
-from lib.cpu_reader import PerfOnlineReader
+from lib.thermal_reader import PerfOnlineReader
 from lib.multimeter import MultiMeter
 
-VERSION="simple"
+VERSION="thermal"
 
 #####################################################################
 def save_with_pickle(data, filename):
@@ -58,7 +58,7 @@ def pmu_callback(pmu_dict):
     if pwr_callback.start_time is None:
         return
     
-    new_vec = np.zeros((1 + len(pmu_dict))) # [time, freq, util]
+    new_vec = np.zeros((1 + len(pmu_dict))) # [time, freq, util, temp]
     # record the received time
     new_vec[0] = float(time.time() * 1000 - pwr_callback.start_time) / 1000
     for evt in pmu_dict:
@@ -143,7 +143,7 @@ def align_samples(target_ts, ts, vs):
 
 EVT_RATIO = 0.5
 COMBINE_PP = True
-PLOT_TYPES = ["MP", "PP", "freq", "util"]
+PLOT_TYPES = ["MP", "PP", "freq", "util","temp"]
 MAX_TIME = 120.0
 
 def animate_plot():
@@ -168,6 +168,7 @@ def animate_plot():
 
     line_freq, = ax_dict["freq"].plot(ts, [0.0] * len(ts), color="g")
     line_util, = ax_dict["util"].plot(ts, [0.0] * len(ts), color="purple")
+    line_temp, = ax_dict["temp"].plot(ts, [0.0] * len(ts), color="r")
 
     def set_pmu_line(line, name, pmu_array):
         lidx = pmu_callback.label_list.index(name)
@@ -183,13 +184,13 @@ def animate_plot():
         # print(pred_pwr_array.shape)
 
         if len(meas_pwr_array) == 0 or len(pred_pwr_array) == 0:
-            return line, line2, line_freq, line_util
+            return line, line2, line_freq, line_util, line_temp
 
         last_pred_time = pred_pwr_array[:,0][-1]
         meas_pwr_array = meas_pwr_array[[meas_pwr_array[:,0] < last_pred_time]]
 
         if len(meas_pwr_array) == 0 or len(pred_pwr_array) == 0:
-            return line, line2, line_freq, line_util
+            return line, line2, line_freq, line_util, line_temp
 
         line.set_xdata(meas_pwr_array[:,0])
         line.set_ydata(meas_pwr_array[:,1])
@@ -200,11 +201,12 @@ def animate_plot():
         if pmu_callback.label_list is not None: 
             set_pmu_line(line_freq, 'freq', pmu_array)
             set_pmu_line(line_util, 'util', pmu_array)
+	    set_pmu_line(line_temp, 'temp', pmu_array)
 
-        return line, line2, line_freq, line_util
+        return line, line2, line_freq, line_util, line_temp
 
     def init():
-        return line, line2, line_freq, line_util
+        return line, line2, line_freq, line_util, line_temp
 
     ani = animation.FuncAnimation(
             fig, animate, np.arange(1, 1000), init_func=init,
@@ -230,6 +232,11 @@ def animate_plot():
     ax_dict["util"].set_ylim(0.0, 100.00)
     ax_dict["util"].set_title("PMU - CPU Utilization")
     ax_dict["util"].set_ylabel("CPU Utilization")
+
+    ax_dict["temp"].set_xlim(5.0, MAX_TIME)
+    ax_dict["temp"].set_ylim(50000.0, 80000.0)
+    ax_dict["temp"].set_title("PMU - CPU Temperature (milli Celsius)")
+    ax_dict["temp"].set_ylabel("CPU Temperature")
 
     plt.xlabel("Time (sec)")
     plt.tight_layout(pad=0.0, w_pad=0.0, h_pad=0.0)

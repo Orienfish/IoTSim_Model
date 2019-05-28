@@ -23,7 +23,7 @@ def perf_runner(cmd, self):
         line = line.strip()
         elems = line.split(",")
 
-        self.digest(elems[0], elems[1]) # freq, util
+        self.digest(elems[0], elems[1], elems[2]) # freq, util, temp
 
 
 class PerfOnlineReader(object):
@@ -50,13 +50,13 @@ class PerfOnlineReader(object):
         self.t.join()
         self.t = None
 
-    def digest(self, freq, util):
+    def digest(self, freq, util, temp):
 	# freq3 = float(freq)
 	# freq3 = freq3*freq3*freq3
 	# self.pmu_dict["freq3"] = str(freq3)
         self.pmu_dict["freq"] = freq
         self.pmu_dict["util"] = util
-	
+	self.pmu_dict["temp"] = temp
         self.callback(self.pmu_dict)
         
         self.pmu_dict = dict()
