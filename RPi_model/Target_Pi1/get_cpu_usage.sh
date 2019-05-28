@@ -51,11 +51,15 @@ while true; do
 
     # calculate the total cpu util
     CPU_Percentage=$(awk "BEGIN {print ($totald - $idled)/$totald*100}")
+
     # calculate the avg cpu freq
     CPU_Freq_List=$(cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq)
     CPU_Freq=$(echo "$CPU_Freq_List" | awk -F " " '{ total += $1; count++ } END { print total/count }')
     diffTime=$(echo "$currentDate-$previousDate" | bc)
-    echo "$CPU_Freq,$CPU_Percentage"
+
+    # get cpu temp in milli celsius
+    CPU_Temp=$(cat /sys/class/thermal/thermal_zone0/temp)
+    echo "$CPU_Freq,$CPU_Percentage,$CPU_Temp"
     # echo "$diffTime"
 
     # prepare for the next round

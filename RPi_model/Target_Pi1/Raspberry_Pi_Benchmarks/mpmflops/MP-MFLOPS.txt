@@ -266,3 +266,2493 @@ From File /proc/version
 Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
  
 
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 13:39:23 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      728     724     432    1583    1711    1671
+ 2T     1440    1377     441    3415    3406    3205
+ 4T     2041    2802     443    5905    6379    6084
+ 8T     2301    2546     441    6572    6610    5985
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 13:39:28 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 13:41:50 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      724     717     437    1710    1707    1671
+ 2T     1355    1416     442    2915    3385    3304
+ 4T     1796    1813     441    6330    6349    6199
+ 8T     2503    2288     440    6255    6629    6029
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 13:41:55 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 13:45:42 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      723     725     435    1576    1716    1535
+ 2T     1429    1397     442    3406    3385    3302
+ 4T     1445    2005     439    6285    6736    6201
+ 8T     2508    2049     437    6308    6584    5909
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 13:45:47 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 13:47:48 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      728     721     440    1710    1715    1617
+ 2T     1145    1426     443    3406    3369    3225
+ 4T     1552    2390     407    5424    5032 #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 13:49:10 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      726     721     441    1716    1712    1670
+ 2T     1440    1428     440    3418    3330    3276
+ 4T     1504    2641     438    6212    6292    5959
+ 8T     1928    2834     441    6253    6576    5959
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 13:49:15 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 13:51:25 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      723     717     431    1712    1716    1669
+ 2T     1421    1387     440    3382    3392    3266
+ 4T     1823    2711     440    6300    6697    6201
+ 8T     1900    2836     441    6243    6215    6134
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 13:51:30 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:16:28 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      624     723     438    1697    1686    1658
+ 2T     1237    1385     437    3350    3392    3201
+ 4T     1478    1789     443    4391    4460    4298
+ 8T     1332    1179     442    4920    4998    4740
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:16:33 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:16:50 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      724     724     439    1709    1685    1635
+ 2T     1431    1381     441    3404    3334    3298
+ 4T     2568    2181     441    6556    6276    6042
+ 8T     2156    2490     441    6348    6604    6030
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:16:55 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:21:12 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      722     725     440    1706    1715    1663
+ 2T     1187    1416     438    3371    3380    3321
+ 4T     1721    1584     442    4472    4093    4191
+ 8T     1470    1559     428    4810    4864    4811
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:21:17 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:21:32 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      726     725     434    1716    1715    1672
+ 2T     1437    1360     439    3416    3360    3324
+ 4T     2288    2196     441    5770    6725    6138
+ 8T     2368    2063     439    6279    6570    5973
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:21:37 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:25:10 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      725     723     416    1709    1714    1665
+ 2T     1432    1364     419    3332    3361    3226
+ 4T     1490    1689     418    4414    4516    4301
+ 8T     1267    1429     418    4866    4936    4548
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:25:15 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:25:22 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      724     720     416    1709    1709    1670
+ 2T     1433    1383     430    3406    3374    3265
+ 4T     2555    2171     431    6637    6680    6032
+ 8T     1970    2502     428    6583    6425    6171
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:25:27 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:32:24 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      722     721     405    1708    1669    1661
+ 2T     1213    1390     409    3353    3358    3282
+ 4T     1488    1828     409    4454    4542    4070
+ 8T     1185    1423     408    4807    4966    4634
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:32:29 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:32:38 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      727     721     408    1716    1708    1672
+ 2T     1432    1354     424    3405    3358    3217
+ 4T     2565    2105     429    6408    6463    5859
+ 8T     2488    2178     426    6536    6587    5889
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:32:43 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:37:21 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      159     173     167     680     678     671
+ 2T      341     363     324    1349    1344    1321
+ 4T      468     469     384    1758    1796    1764
+ 8T      481     504     399    1972    1935    1905
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66014   95363   99951
+ 2T    76406   97075   99969   66014   95363   99951
+ 4T    76406   97075   99969   66014   95363   99951
+ 8T    76406   97075   99969   66014   95363   99951
+
+         End of test Mon May 27 15:37:34 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:37:34 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      180     182     173     682 #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:37:37 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      184     181     175     666     679     677
+ 2T      340     365     323     676    1344    1337     675
+ 2T      342    1308     307
+ 4T      396     338     334     372    1515    1108    1780     981    1521
+ 8T      383     413     331    1156
+ 4T      334     323    1510     297    1422    1275    1440
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66015   95363   99951
+ 2T    76406   97075   99969   66015   95363   99951
+ 4T    76406   97075   99969   66015   95363   99951
+ 8T    76406   97075   99969   66015   95363   99951
+
+         End of test Mon May 27 15:37:48 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:37:48 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      541    1504     713     301    1936
+ 8T      489     478    1598     411    2006    1695    1955    1600
+ 2T      822     941     318    1710
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66014   95363   99951
+ 2T    76406   97075   99969   66014   95363   99951
+ 4T    76406   97075   99969   66014   95363   99951
+ 8T    76406   97075   99969   66014   95363   99951
+
+         End of test Mon May 27 15:37:51 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+    2997 #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:37:51 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      176    3295     174    2980
+ 4T     1288    1504     138     349    4133    4182    3847
+ 8T     1231    1315     427    4200    4265     604    3897
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:37:54 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+     624     671
+ 2T      365     359     336    1363    1350    1338
+ 4T      646     711     433    2638    2495    2611
+ 8T      687     702     435    2584    2645    2574
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66015   95363   99951
+ 2T    76406   97075   99969   66015   95363   99951
+ 4T    76406   97075   99969   66015   95363   99951
+ 8T    76406   97075   99969   66015   95363   99951
+
+         End of test Mon May 27 15:38:03 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:38:03 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      703     721     411    1696    1707    1646
+ 2T     1412    1389     423    3377    3372    3253
+ 4T     2295    2128     427    6366    6468    6026
+ 8T     2530    2205     422    6495    6423    6017
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:38:08 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:43:34 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      183     177     175     683     675     676
+ 2T      365     360     331    1334    1355    1335
+ 4T      611     641     418    2693    2542    2606
+ 8T      654     655     421    2606    2643    2610
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66014   95363   99951
+ 2T    76406   97075   99969   66014   95363   99951
+ 4T    76406   97075   99969   66014   95363   99951
+ 8T    76406   97075   99969   66014   95363   99951
+
+         End of test Mon May 27 15:43:46 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:43:46 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      183     180     174     674     683     665
+ 2T      344     363     336    1351    1348    1313
+ 4T      627     705     401    2692    2539    2626
+ 8T      662     679     424    2634    2538    2616
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66015   95363   99951
+ 2T    76406   97075   99969   66015   95363   99951
+ 4T    76406   97075   99969   66015   95363   99951
+ 8T    76406   97075   99969   66015   95363   99951
+
+         End of test Mon May 27 15:43:58 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:43:58 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      670     715     417    1707    1715    1673
+ 2T     1430    1361     419    3394    3401    3242
+ 4T     1526    2601     431    6391    5746    6190
+ 8T     1777    2754     428    6549    6660    5965
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:44:03 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:49:56 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      183     159     175     684     679     677
+ 2T      366     360     337    1361    1350    1335
+ 4T      638     719     426    2692    2674    2602
+ 8T      621     696     427    2661    2572    2621
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66014   95363   99951
+ 2T    76406   97075   99969   66014   95363   99951
+ 4T    76406   97075   99969   66014   95363   99951
+ 8T    76406   97075   99969   66014   95363   99951
+
+         End of test Mon May 27 15:50:08 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:50:08 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      183     182     154     681     653     667
+ 2T      348     362     338    1362    1352    1322
+ 4T      597     718     437    2686    2528    2616
+ 8T      675     704     434    2654    2671    2617
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66015   95363   99951
+ 2T    76406   97075   99969   66015   95363   99951
+ 4T    76406   97075   99969   66015   95363   99951
+ 8T    76406   97075   99969   66015   95363   99951
+
+         End of test Mon May 27 15:50:20 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 15:50:20 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      725     721     431    1693    1708    1648
+ 2T     1345    1392     437    3370    3411    3228
+ 4T     1505    2674     441    6585    6262    6077
+ 8T     1904    2341     441    6302    6480    6102
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 15:50:25 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 16:20:39 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      168     168     159     665     658     659
+ 2T      329     332     308    1304    1297    1269
+ 4T      518     606     366    2131    2076    2107
+ 8T      526     542     403    2178    2153    2050
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66014   95363   99951
+ 2T    76406   97075   99969   66014   95363   99951
+ 4T    76406   97075   99969   66014   95363   99951
+ 8T    76406   97075   99969   66014   95363   99951
+
+         End of test Mon May 27 16:20:52 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 16:20:52 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      174     174     160     668     667     668
+ 2T      327     333     306    1329    1350    1282
+ 4T      516     528     373    2277    2188    2121
+ 8T      564     571     398    2210    2214    2048
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66015   95363   99951
+ 2T    76406   97075   99969   66015   95363   99951
+ 4T    76406   97075   99969   66015   95363   99951
+ 8T    76406   97075   99969   66015   95363   99951
+
+         End of test Mon May 27 16:21:04 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 16:21:04 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      642     690     356    1617    1634    1578
+ 2T     1269    1369     405    3263    3267    3046
+ 4T     1905    1750     419    5167    5249    4730
+ 8T     2004    1619     417    5274    5319    4989
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 16:21:10 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 16:24:43 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      170     172     160     664     641     649
+ 2T      341     330     311    1324    1322    1294
+ 4T      558     477     394    2158    2190    2104
+ 8T      597     525     408    2174    2248    2101
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66014   95363   99951
+ 2T    76406   97075   99969   66014   95363   99951
+ 4T    76406   97075   99969   66014   95363   99951
+ 8T    76406   97075   99969   66014   95363   99951
+
+         End of test Mon May 27 16:24:56 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 16:24:56 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      167     173     162     681     670     659
+ 2T      344     336     307    1356    1341    1312
+ 4T      516     550     372    2149    2147    2036
+ 8T      584     534     384    2142    2215    1975
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66015   95363   99951
+ 2T    76406   97075   99969   66015   95363   99951
+ 4T    76406   97075   99969   66015   95363   99951
+ 8T    76406   97075   99969   66015   95363   99951
+
+         End of test Mon May 27 16:25:09 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 16:25:09 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      619     674     377    1631    1639    1549
+ 2T     1206    1266     399    3211    3261    3178
+ 4T     1882    2363     418    5399    5646    4458
+ 8T     1419    1810     418    4804    4669    4059
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 16:25:15 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 16:35:55 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      163     164     157     665     635     638
+ 2T      330     331     294    1310    1282    1236
+ 4T      489     519     351    2062    1995    1859
+ 8T      491     498     384    1901    1903    1815
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66014   95363   99951
+ 2T    76406   97075   99969   66014   95363   99951
+ 4T    76406   97075   99969   66014   95363   99951
+ 8T    76406   97075   99969   66014   95363   99951
+
+         End of test Mon May 27 16:36:08 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 16:36:08 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      162     163     150     657     639     662
+ 2T      340     335     304    1332    1310    1297
+ 4T      483     494     373    1960    1982    1857
+ 8T      483     461     374    1926    1948    1765
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66015   95363   99951
+ 2T    76406   97075   99969   66015   95363   99951
+ 4T    76406   97075   99969   66015   95363   99951
+ 8T    76406   97075   99969   66015   95363   99951
+
+         End of test Mon May 27 16:36:22 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 16:36:22 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      613     607     349    1492    1516    1477
+ 2T     1007    1115     402    2992    3056    2759
+ 4T     1340    1668     416    4147    4471    3650
+ 8T     1567    1547     413    3909    3813    3863
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 16:36:28 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 17:31:25 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      170     171     160     665     660     648
+ 2T      339     334     304    1310    1318    1309
+ 4T      540     477     367    2190    2107    2061
+ 8T      478     548     382    2105    2198    2083
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66014   95363   99951
+ 2T    76406   97075   99969   66014   95363   99951
+ 4T    76406   97075   99969   66014   95363   99951
+ 8T    76406   97075   99969   66014   95363   99951
+
+         End of test Mon May 27 17:31:37 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 17:31:37 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      173     168     161     675     669     642
+ 2T      342     342     310    1344    1343    1290
+ 4T      497     610     355    2141    2192    2074
+ 8T      550     572     386    2203    2230    2128
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66015   95363   99951
+ 2T    76406   97075   99969   66015   95363   99951
+ 4T    76406   97075   99969   66015   95363   99951
+ 8T    76406   97075   99969   66015   95363   99951
+
+         End of test Mon May 27 17:31:50 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+ #####################################################
+
+ MP-MFLOPS Compiled NEON v1.0 Mon May 27 17:31:50 2019
+
+    FPU Add & Multiply using 1, 2, 4 and 8 Threads
+
+        2 Ops/Word              32 Ops/Word
+ KB     12.8     128   12800    12.8     128   12800
+ MFLOPS
+ 1T      684     669     364    1607    1610    1607
+ 2T     1334    1326     388    3264    3210    3058
+ 4T     1821    1692     406    5316    5171    4877
+ 8T     1900    2565     411    5056    5115    4815
+ Results x 100000, 0 indicates ERRORS
+ 1T    76406   97075   99969   66020   95364   99952
+ 2T    76406   97075   99969   66020   95364   99952
+ 4T    76406   97075   99969   66020   95364   99952
+ 8T    76406   97075   99969   66020   95364   99952
+
+         End of test Mon May 27 17:31:56 2019
+
+SYSTEM INFORMATION
+
+From File /proc/cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU vLinux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
+From File /proc/version
+Linux version 4.19.42-v7+ (dom@dom-XPS-13-9370) (gcc version 4.9.3 (crosstool-NG crosstool-ng-1.22.0-88-g8460611)) #1219 SMP Tue May 14 21:20:58 BST 2019
+ 
+
