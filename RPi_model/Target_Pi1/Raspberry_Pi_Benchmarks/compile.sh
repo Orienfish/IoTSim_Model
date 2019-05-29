@@ -15,7 +15,7 @@ bash -c "cd whet && \
 gcc  whets.c cpuidc.c -lm -lrt -O3 -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4 -o whetstonePiA7 "
 # Whetstone - multi thread
 bash -c "cd mpwhets && \
-gcc mpwhets.c cpuidc.c -lrt -lc -lm -O3 -lpthread -o MP-WHETS"
+gcc mpwhets.c cpuidc.c -lrt -lc -lm -O3 -lpthread -o MP-WHETS "
 bash -c "cd mpwhets && \
 gcc mpwhets.c cpuidc.c -lrt -lc -lm -O3 -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4 -funsafe-math-optimizations -lpthread -o MP-WHETSPiA7 "
 
@@ -25,7 +25,7 @@ gcc  linpack.c cpuidc.c -lm -lrt -O3 -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon
 
 # MP-MFLOPS
 bash -c "cd mpmflops && \
-gcc  mpmflops.c cpuidc.c -lrt -lc -lm -O3 -lpthread -o MP-MFLOPS"
+gcc  mpmflops.c cpuidc.c -lrt -lc -lm -O3 -lpthread -o MP-MFLOPS "
 bash -c "cd mpmflops && \
 gcc mpmflops.c cpuidc.c -lrt -lc -lm -O3 -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4 -lpthread -o MP-MFLOPSPiA7 "
 bash -c "cd mpmflops && \
