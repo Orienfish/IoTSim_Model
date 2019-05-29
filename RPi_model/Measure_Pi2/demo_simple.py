@@ -50,8 +50,8 @@ def pmu_callback(pmu_dict):
         pmu_callback.label_list = ["time"]
         pmu_callback.label_list += sorted(list(pmu_dict.keys()))
 
-    #for key in pmu_dict:
-    #	print key, pmu_dict[key]
+    for key in pmu_dict:
+    	print key, pmu_dict[key]
 
     if len(pmu_dict) != len(pmu_callback.label_list) - 1:
         print("PMU measurement error")

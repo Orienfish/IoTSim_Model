@@ -22,8 +22,10 @@ def perf_runner(cmd, self):
     for line in iter(proc.stdout.readline, ''):
         line = line.strip()
         elems = line.split(",")
-
-        self.digest(elems[0], elems[1], elems[2]) # freq, util, temp
+	freq = int(elems[0])
+	util = float(elems[1])
+	temp = int(elems[2])
+        self.digest(freq, util, temp) # freq, util, temp
 
 
 class PerfOnlineReader(object):

@@ -62,3 +62,13 @@ Coefficients of ./model/model.pmu.17595705282019
 cache-misses: 4.22475979396e-08 instructions: 2.459530936e-09 intercept: 3.70655517148
 Score: 0.756987
 Error: avg: 0.063193 max: 0.354916
+
+Coefficients of ./model/model.simple.20535705282019
+freq: 7.55585915599e-07 util: 0.0225627006359 intercept: 2.66367519505
+Score: 0.855092
+Error: avg: 0.035680 max: 0.240163
+
+Coefficients of ./model/model.simple.20582905282019
+freq: 1.03480943157e-06 util: 0.0147611473956 intercept: 2.79060842295
+Score: 0.703851
+Error: avg: 0.044138 max: 0.236578
