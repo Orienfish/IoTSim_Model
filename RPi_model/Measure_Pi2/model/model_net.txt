@@ -1,0 +1,14 @@
+
+Based on of ./model/model.simple.20535705282019 (please refer to model_info.txt)
+
+Coefficients of ./model/model.simple_net.21320305282019
+bandwidth: 0.0intercept: -0.0915642988333
+Score: 1.000000
+Error: avg: 0.000000 max: -0.000000
+
+Based on of ./model/model.simple.20535705282019 (please refer to model_info.txt)
+
+Coefficients of ./model/model.simple_net.21440805282019
+bandwidth: 0.0intercept: -0.0627669236064
+Score: 1.000000
+Error: avg: 0.000000 max: -0.000000
