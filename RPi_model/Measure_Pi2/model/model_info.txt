@@ -22,3 +22,43 @@ Score: 0.848167
 Coefficients of ./model/model.pmu.18095205272019
 cache-misses: 4.65334980514e-08 instructions: 2.44749471852e-09 intercept: 3.71327490824
 Score: 0.777188
+
+Coefficients of ./model/model.simple.17195505282019
+freq: 1.01729095588e-06 util: 0.019204358174 intercept: 2.53846312813
+Score: 0.744845
+Error: avg: 0.040033 max 0.189162
+
+Coefficients of ./model/model.pmu.17315305282019
+L1-dcache-loads: 4.47522819279e-09 L1-dcache-stores: -5.93678882851e-09 branch-instructions: 2.52709699594e-09 branch-misses: 6.48153635232e-07 cache-misses: 2.60141366268e-08 cache-references: 4.01505745659e-09 cpu-cycles: 1.48004204076e-09 instructions: 6.70261866306e-10 r110: -8.05684509412e-07 r13C: 0.0 r1A2: 0.0 r1C2: 1.1285335211e-07 intercept: 3.33181194036
+Score: 0.964819
+Error: avg: 0.019700 max: 0.262177
+
+Coefficients of ./model/model.simple.17370005282019
+freq: 6.47408330907e-07 util: 0.0225059599293 intercept: 2.79908321669
+Score: 0.835380
+Error: avg: 0.036752 max: 0.230445
+
+Coefficients of ./model/model.thermal.17411405282019
+freq: 8.05364976844e-07 temp: 2.82691627467e-06 util: 0.0212865640479 intercept: 2.4862474067
+Score: 0.823938
+Error: avg: 0.035857 max: 0.286486
+
+Coefficients of ./model/model.thermal.17454905282019
+freq: 1.26747481494e-06 temp: -3.26279358432e-05 util: 0.0173821611121 intercept: 4.90263015709
+Score: 0.416698
+Error: avg: 0.038595 max: 0.355801
+
+Coefficients of ./model/model.pmu.17503205282019
+L1-dcache-loads: 7.76875576343e-09 L1-dcache-stores: -6.41239391471e-09 branch-instructions: 1.63522912788e-09 branch-misses: -3.38812266507e-07 cache-misses: 3.06296278932e-08 cache-references: 1.62234426676e-09 cpu-cycles: 1.29303740568e-09 instructions: 8.97171929235e-10 r110: 1.44417183515e-07 r13C: 0.0 r1A2: 0.0 r1C2: 9.81993220527e-08 intercept: 3.40912039969
+Score: 0.940440
+Error: avg: 0.020299 max: 0.309075
+
+Coefficients of ./model/model.pmu.17560305282019
+cache-misses: 3.66397275872e-08 instructions: 2.46847245256e-09 intercept: 3.89701574098
+Score: 0.777048
+Error: avg: 0.065696 max: 0.247445
+
+Coefficients of ./model/model.pmu.17595705282019
+cache-misses: 4.22475979396e-08 instructions: 2.459530936e-09 intercept: 3.70655517148
+Score: 0.756987
+Error: avg: 0.063193 max: 0.354916

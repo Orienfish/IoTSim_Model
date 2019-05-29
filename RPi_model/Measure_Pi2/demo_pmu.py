@@ -1,3 +1,4 @@
+from __future__ import division
 import os
 import sys
 import datetime
@@ -236,6 +237,14 @@ def animate_plot():
 
     plt.show()
 
+def getError(pred, msr):
+    err = np.absolute(pred - msr) / msr
+    maxErr = np.amax(err)
+    avgErr = np.mean(err)
+    return avgErr, maxErr
+###################################################################
+
+###################################################################
 def main():
     if len(sys.argv) == 1:
         filename = "model.tmp"
@@ -286,8 +295,11 @@ def main():
     save_csv("measurement_"+VERSION+".csv", pmu_callback.label_list + ["power"], data_matrix)
     clf = LinearRegression()
     reg = clf.fit(data_matrix[:, :n_evt], data_matrix[:, n_evt])
+    pred = clf.predict(data_matrix[:, :n_evt])
     score = clf.score(data_matrix[:, :n_evt], data_matrix[:, n_evt])
+    avgErr, maxErr = getError(pred, data_matrix[:, n_evt])
     print("Score: %f" %score)
+    print("Error: avg: %f max: %f" %(avgErr, maxErr))
 
     # Save model
     new_model = "./model/model." + VERSION + "." + \
@@ -297,14 +309,14 @@ def main():
 
     # Save coefficients
     with open("./model/model_info.txt", "a+") as f:
-	f.write("Coefficients of %s\r\n" %new_model)
-	for i in range(0, n_evt): # ["cache-misses", "instructions"]
+	f.write("\r\nCoefficients of %s\r\n" %new_model)
+	for i in range(0, n_evt):
 	    f.write("%s: " %pmu_callback.label_list[i])
 	    f.write("%s " %reg.coef_[i])
 	f.write("intercept: ")
 	f.write("%s" %reg.intercept_)
 	f.write("\r\nScore: %f\r\n" %score)
-
+	f.write("Error: avg: %f max: %f\r\n" %(avgErr, maxErr))
 if __name__ == '__main__':
     main()
 
