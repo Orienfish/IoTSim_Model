@@ -95,16 +95,12 @@ pwr_callback.start_time = None
 ###################################################################
 
 ###################################################################
-<<<<<<< HEAD
 def plot(BW, net_pwr):
 	line, = plt.plot(BW, net_pwr, color='b+')
 	plt.title("Network Power Consumption - Bandwidth")
 	plt.xlabel("Bandwidth (Kbps)")
 	plt.ylabel("Network Power Consumption (W)")
 	plt.show()
-=======
-# def plotBW():
->>>>>>> 646415bb0e2c9bf50391da13b9f511a203624340
 ###################################################################
 
 ###################################################################
@@ -126,20 +122,17 @@ def main():
     # Load model if exists
     pmu_callback.model = load_with_pickle(filename)
 
-<<<<<<< HEAD
     # To store network power measurement
     net_pwr = []
 
     # Run different bw test
     for i in range(0, len(BW)):
-=======
     # dict for test results - power for network portion
     net_pwr = []
 
     # run different bw test
     for i in range(0, len(BW)):
 	# Run program and 
->>>>>>> 646415bb0e2c9bf50391da13b9f511a203624340
     	mm = MultiMeter("pwr_tmp.txt")
     	mm.run(pwr_callback)
 
@@ -151,27 +144,20 @@ def main():
 	net.runTest(BW[i])
 	time.sleep(TEST_TIME)
 	net.stop()
-<<<<<<< HEAD
-=======
-        reader.wait()
->>>>>>> 646415bb0e2c9bf50391da13b9f511a203624340
+        # reader.wait()
         reader.finish()
         mm.stop()
 
 	net_pwr.append(np.mean(np.array(pmu_callback.train_data)))
 	pmu_callback.train_data = []
 	print "Test of bw %d: avg network pwr is %f" %(BW[i], net_pwr[i])
-<<<<<<< HEAD
 	# Prepare data and train net_pwr-BW linear regression
     print("Measurement Done")
 
     assert(len(BW) != len(net_pwr))
-=======
-
     # Create dataset to train the model again in case needed
     print("Measurement Done")
 
->>>>>>> 646415bb0e2c9bf50391da13b9f511a203624340
     bw_array = np.array(BW)
     power_array = np.array(net_pwr)
     data_matrix = np.zeros((bw_array.shape[0], 2))
@@ -187,11 +173,8 @@ def main():
     print("Score: %f" %score)
     print("Error: avg: %f max: %f" %(avgErr, maxErr))
 
-<<<<<<< HEAD
     plot(BW, net_pwr)
 
-=======
->>>>>>> 646415bb0e2c9bf50391da13b9f511a203624340
     # Save model
     new_model = "./model/model." + VERSION + "." + \
     	datetime.datetime.now().strftime("%H%M%S%m%d%Y")
