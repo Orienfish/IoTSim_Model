@@ -22,6 +22,7 @@ def perf_runner(cmd, self):
     for line in iter(proc.stdout.readline, ''):
         line = line.strip()
         elems = line.split(",")
+
 	freq = int(elems[0])
 	util = float(elems[1])
         self.digest(freq, util)

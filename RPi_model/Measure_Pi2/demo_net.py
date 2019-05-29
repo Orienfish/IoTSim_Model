@@ -125,11 +125,6 @@ def main():
     # To store network power measurement
     net_pwr = []
 
-    # Run different bw test
-    for i in range(0, len(BW)):
-    # dict for test results - power for network portion
-    net_pwr = []
-
     # run different bw test
     for i in range(0, len(BW)):
 	# Run program and 
@@ -152,7 +147,6 @@ def main():
 	pmu_callback.train_data = []
 	print "Test of bw %d: avg network pwr is %f" %(BW[i], net_pwr[i])
 	# Prepare data and train net_pwr-BW linear regression
-    print("Measurement Done")
 
     assert(len(BW) != len(net_pwr))
     # Create dataset to train the model again in case needed
