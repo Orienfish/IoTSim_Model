@@ -1,10 +1,12 @@
 #!/bin/bash
 # Make the total cpu utilization measurement
-# When sleep duration is 0.05s, the sampling interval is about 0.2s
+# When sleep duration is 0s, the sampling interval is about 0.2s
+startTime=$(date +%s.%N)
 cpu="cpu"
 sleepDurationSeconds=$1
+echo "time,freq,util"
+
 # taken the previous measurement
-previousDate=$(date +%s.%N)
 previousStats=$(cat /proc/stat)
 # Only get the total cpu info line
 previousLine=$(echo "$previousStats" | grep "$cpu ")
@@ -22,7 +24,7 @@ prevguest_nice=$(echo "$previousLine" | awk -F " " '{print $11}')
 sleep $sleepDurationSeconds
 
 while true; do
-    currentDate=$(date +%s.%N)
+    currentTime=$(date +%s.%N)
     currentStats=$(cat /proc/stat)
     
     currentLine=$(echo "$currentStats" | grep "$cpu ")
@@ -55,12 +57,9 @@ while true; do
     # calculate the avg cpu freq
     CPU_Freq_List=$(cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq)
     CPU_Freq=$(echo "$CPU_Freq_List" | awk -F " " '{ total += $1; count++ } END { print total/count }')
-    diffTime=$(echo "$currentDate-$previousDate" | bc)
+    elapsedTime=$(echo "$currentTime-$startTime" | bc)
 
-    # get cpu temp in milli celsius
-    CPU_Temp=$(cat /sys/class/thermal/thermal_zone0/temp)
-    echo "$CPU_Freq,$CPU_Percentage,$CPU_Temp"
-    # echo "$diffTime"
+    echo "$elapsedTime,$CPU_Freq,$CPU_Percentage"
 
     # prepare for the next round
     prevuser=$user
