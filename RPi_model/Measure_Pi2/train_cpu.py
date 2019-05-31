@@ -9,17 +9,17 @@ import sklearn
 import cPickle as pickle
 from sklearn.linear_model import LinearRegression
 
-PWR_FILE_600 = "./pwr_measure/pwr_600_16050905302019.txt"
-PWR_FILE_1200 = "./pwr_measure/pwr_1200_16080405302019.txt"
-PERF_FILE_600 = "./cpu_measure/cpu_600_16040405302019.txt"
-PERF_FILE_1200 = "./cpu_measure/cpu_1200_16070005302019.txt"
-VERSION = "v1"
+#PWR_FILE_600 = "./pwr_measure/pwr_600_16050905302019.txt"
+#PWR_FILE_1200 = "./pwr_measure/pwr_1200_16080405302019.txt"
+#PERF_FILE_600 = "./cpu_measure/cpu_600_16040405302019.txt"
+#PERF_FILE_1200 = "./cpu_measure/cpu_1200_16070005302019.txt"
+#VERSION = "v1"
 
-# PWR_FILE_600 = "./pwr_measure/pwr_600.2_16123305302019.txt"
-# PWR_FILE_1200 = "./pwr_measure/pwr_1200.2_16102605302019.txt"
-# PERF_FILE_600 = "./cpu_measure/cpu_600.2_16112905302019.txt"
-# PERF_FILE_1200 = "./cpu_measure/cpu_1200.2_16092105302019.txt"
-# VERSION = "v2"
+PWR_FILE_600 = "./pwr_measure/pwr_600.2_16123305302019.txt"
+PWR_FILE_1200 = "./pwr_measure/pwr_1200.2_16102605302019.txt"
+PERF_FILE_600 = "./cpu_measure/cpu_600.2_16112905302019.txt"
+PERF_FILE_1200 = "./cpu_measure/cpu_1200.2_16092105302019.txt"
+VERSION = "v2"
 #####################################################################
 def save_with_pickle(data, filename):
     """ save data to a file for future processing"""
