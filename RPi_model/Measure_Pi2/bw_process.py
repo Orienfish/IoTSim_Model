@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import sklearn
 import cPickle as pickle
 from sklearn.linear_model import LinearRegression
+# Usage: python bw_process ./model/model.v1
 
 bw = [50, 100, 200, 400, 800, 1000, 2000, 4000, 8000, 10000]
 #####################################################################
@@ -171,7 +172,9 @@ def main():
     	    net_pwr.append(np.mean(data_matrix[:, 2]))
     
     
-    plt.plot(bw, net_pwr, 'b')
+    plt.plot(bw, net_pwr, 'b*')
+    plt.xlabel("Bandwidth (kbps)")
+    plt.ylabel("Network Power Consumption (W)")
     plt.show()
 
 if __name__ == '__main__':
