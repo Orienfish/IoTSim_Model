@@ -1,0 +1,5 @@
+
+Coefficients of ./model/model.v1
+freq: 1.58183313424e-06 util: 0.0188874750319 intercept: 1.79172123846
+Score: 0.941729
+Error: avg: 0.018842 max: 0.193308

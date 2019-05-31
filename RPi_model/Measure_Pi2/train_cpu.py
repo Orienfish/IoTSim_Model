@@ -5,16 +5,21 @@ import datetime
 import time
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 import sklearn
 import cPickle as pickle
 from sklearn.linear_model import LinearRegression
 
-from lib.cpu_reader import PerfOnlineReader
-from lib.multimeter import MultiMeter
+PWR_FILE_600 = "./pwr_measure/pwr_600_16050905302019.txt"
+PWR_FILE_1200 = "./pwr_measure/pwr_1200_16080405302019.txt"
+PERF_FILE_600 = "./cpu_measure/cpu_600_16040405302019.txt"
+PERF_FILE_1200 = "./cpu_measure/cpu_1200_16070005302019.txt"
+VERSION = "v1"
 
-VERSION="simple"
-
+# PWR_FILE_600 = "./pwr_measure/pwr_600.2_16123305302019.txt"
+# PWR_FILE_1200 = "./pwr_measure/pwr_1200.2_16102605302019.txt"
+# PERF_FILE_600 = "./cpu_measure/cpu_600.2_16112905302019.txt"
+# PERF_FILE_1200 = "./cpu_measure/cpu_1200.2_16092105302019.txt"
+# VERSION = "v2"
 #####################################################################
 def save_with_pickle(data, filename):
     """ save data to a file for future processing"""
@@ -45,49 +50,51 @@ def save_csv(filename, keys, data_matrix):
 #####################################################################
 
 ####################################################################
-def pmu_callback(pmu_dict):
-    if pmu_callback.label_list is None: # first sample
-        pmu_callback.label_list = ["time"]
-        pmu_callback.label_list += sorted(list(pmu_dict.keys()))
+def load_pwr(pwrfile):
+	train_data = []
+	with open(pwrfile, "r") as f:
+		f.readline() # date line
+		f.readline() # label line
+		line = f.readline() # first data
+		while line:
+			elem = line.strip().split(",")
+			new_vec = np.zeros(2)
+                        new_vec[0] = float(elem[1]) # time
+                        new_vec[1] = float(elem[5]) # power
+                        
+			train_data.append(new_vec)
 
-    # for key in pmu_dict:
-    #	print key, pmu_dict[key]
+			line = f.readline()
+	return train_data
+			
+def load_perf(perffile):
+	train_data = []
+	pred_pwr_list = []
+	with open(perffile, "r") as f:
+		line = f.readline()
+		load_perf.label_list = line.strip().split(",")
+		# print "label_list: ", load_perf.label_list
+		
+		line = f.readline() # first data
+		while line:
+			elem = line.strip().split(",")
+			# new vec: [time, freq, util]
+			new_vec = np.zeros(len(load_perf.label_list))
+			for i in range(0, len(load_perf.label_list)):
+				new_vec[i] = float(elem[i])
+			train_data.append(new_vec)
+			
+			if load_perf.model:
+				pred_pwr_list.append(load_perf.model.predict([new_vec[1:]])[0])
+			else:
+				pred_pwr_list.append(0.0)
+			
+			line = f.readline()
+	return train_data, pred_pwr_list
+			
+load_perf.label_list = None
+load_perf.model = None
 
-    if len(pmu_dict) != len(pmu_callback.label_list) - 1:
-        print("PMU measurement error")
-        return
-    if pwr_callback.start_time is None:
-        return
-    
-    new_vec = np.zeros((1 + len(pmu_dict))) # [time, freq, util]
-    # record the received time
-    new_vec[0] = float(time.time() * 1000 - pwr_callback.start_time) / 1000
-    for evt in pmu_dict:
-        new_vec[pmu_callback.label_list.index(evt)] = pmu_dict[evt]
-    pmu_callback.train_data.append(new_vec) # time and all the events, no pred
-
-    if pmu_callback.model is not None:
-        pred_pwr = pmu_callback.model.predict([new_vec[1:]])[0]
-    else:
-        pred_pwr = 0.0
-    pmu_callback.pred_pwr_list.append([new_vec[0], pred_pwr])
-    print(pred_pwr, pwr_callback.last_pwr)
-
-pmu_callback.label_list = None
-pmu_callback.train_data = []
-pmu_callback.pred_pwr_list = []
-
-def pwr_callback(pwr):
-    if pwr_callback.start_time is None:
-        pwr_callback.start_time = time.time() * 1000
-
-    pwr_callback.last_pwr = pwr
-    pwr_callback.train_data.append(np.array(
-        [float(time.time() * 1000 - pwr_callback.start_time) / 1000, pwr]))
-
-pwr_callback.train_data = []
-pwr_callback.last_pwr = 0.0
-pwr_callback.start_time = None
 ###################################################################
 
 ###################################################################
@@ -145,9 +152,9 @@ def align_samples(target_ts, ts, vs):
 EVT_RATIO = 0.5
 COMBINE_PP = True
 PLOT_TYPES = ["MP", "PP", "freq", "util"]
-MAX_TIME = 120.0
+MAX_TIME = 80.0
 
-def animate_plot():
+def plot(pwr, pred_pwr, perf):
     num_plots = len(PLOT_TYPES)
     if COMBINE_PP:
         num_plots -= 1
@@ -162,54 +169,15 @@ def animate_plot():
         else:
             plot_idx += 1
 
+    meas_pwr_array = np.array(pwr)
+    pred_pwr_array = np.array(pred_pwr)
+    perf_array = np.array(perf)
 
-    ts = np.arange(0, MAX_TIME, 0.1)
-    line, = ax_dict["MP"].plot(ts, [0.0] * len(ts), color="b")
-    line2, = ax_dict["PP"].plot(ts, [0.0] * len(ts), color="r")
+    line, = ax_dict["MP"].plot(meas_pwr_array[:, 0], meas_pwr_array[:, 1], color="b")
+    line2, = ax_dict["PP"].plot(perf_array[:, 0], pred_pwr_array, color="r")
 
-    line_freq, = ax_dict["freq"].plot(ts, [0.0] * len(ts), color="g")
-    line_util, = ax_dict["util"].plot(ts, [0.0] * len(ts), color="purple")
-
-    def set_pmu_line(line, name, pmu_array):
-        lidx = pmu_callback.label_list.index(name)
-        Y = pmu_array[:,lidx]
-        line.set_xdata(pmu_array[:,0])
-        line.set_ydata(Y)
-
-    def animate(i):
-        meas_pwr_array = np.array(list(pwr_callback.train_data))
-        pred_pwr_array = np.array(list(pmu_callback.pred_pwr_list))
-        pmu_array = np.array(list(pmu_callback.train_data))
-        # print(meas_pwr_array.shape)
-        # print(pred_pwr_array.shape)
-
-        if len(meas_pwr_array) == 0 or len(pred_pwr_array) == 0:
-            return line, line2, line_freq, line_util
-
-        last_pred_time = pred_pwr_array[:,0][-1]
-        meas_pwr_array = meas_pwr_array[[meas_pwr_array[:,0] < last_pred_time]]
-
-        if len(meas_pwr_array) == 0 or len(pred_pwr_array) == 0:
-            return line, line2, line_freq, line_util
-
-        line.set_xdata(meas_pwr_array[:,0])
-        line.set_ydata(meas_pwr_array[:,1])
-
-        line2.set_xdata(pred_pwr_array[:,0])
-        line2.set_ydata(pred_pwr_array[:,1])
-
-        if pmu_callback.label_list is not None: 
-            set_pmu_line(line_freq, 'freq', pmu_array)
-            set_pmu_line(line_util, 'util', pmu_array)
-
-        return line, line2, line_freq, line_util
-
-    def init():
-        return line, line2, line_freq, line_util
-
-    ani = animation.FuncAnimation(
-            fig, animate, np.arange(1, 1000), init_func=init,
-            interval=500, blit=True) # 1000 frames
+    line_freq, = ax_dict["freq"].plot(perf_array[:, 0], perf_array[:, 1], color="g")
+    line_util, = ax_dict["util"].plot(perf_array[:, 0], perf_array[:, 2], color="purple")
 
     ax_dict["MP"].set_xlim(5.0, MAX_TIME)
     ax_dict["MP"].set_ylim(3.0, 6.0)
@@ -228,7 +196,7 @@ def animate_plot():
     ax_dict["freq"].set_ylabel("Instructions")
 
     ax_dict["util"].set_xlim(5.0, MAX_TIME)
-    ax_dict["util"].set_ylim(0.0, 100.00)
+    ax_dict["util"].set_ylim(0.0, 110.00)
     ax_dict["util"].set_title("PMU - CPU Utilization")
     ax_dict["util"].set_ylabel("CPU Utilization")
 
@@ -237,6 +205,9 @@ def animate_plot():
 
     plt.show()
 
+###################################################################
+
+###################################################################
 def getError(pred, msr):
     err = np.absolute(pred - msr) / msr
     maxErr = np.amax(err)
@@ -252,47 +223,57 @@ def main():
         filename = sys.argv[1] 
 
     # Load model if exists
-    pmu_callback.model = load_with_pickle(filename)
+    load_perf.model = load_with_pickle(filename)
 
-    # Run program and 
-    mm = MultiMeter("pwr_tmp.txt")
-    mm.run(pwr_callback)
+    # read data - 600MHz
+    pwr_data_1 = load_pwr(PWR_FILE_600)
+    perf_data_1, pred_pwr_1 = load_perf(PERF_FILE_600)
 
-    print("Start Perf + Program")
-    reader = PerfOnlineReader()
-    reader.run(pmu_callback)
-
-    animate_plot()
-
-    #time.sleep(10)
-    reader.wait()
-
-    reader.finish()
-    mm.stop()
-
-    # Create dataset to train the model again in case needed
-    print("Measurement Done")
-    print(pmu_callback.label_list)
-
-    ps = np.array(pwr_callback.train_data)
-    vs = np.array(pmu_callback.train_data)
-
+    ps = np.array(pwr_data_1)
+    vs = np.array(perf_data_1)
+    print ps.shape, vs.shape
+    
     n_evt = vs.shape[1] - 1 # get the # of events
-    data_matrix = np.zeros((ps.shape[0], n_evt + 1))
+    data_matrix_1 = np.zeros((ps.shape[0], n_evt + 1))
     # fill the power into the last column of data matrix
-    data_matrix[:, n_evt] = ps[:, 1]
+    data_matrix_1[:, n_evt] = ps[:, 1]
     # fill the first n_evt columns
     for idx in range(1, vs.shape[1]):
         vs_aligned = align_samples(ps[:, 0], vs[:, 0], vs[:, idx])
-        data_matrix[:, idx - 1] = vs_aligned
+        data_matrix_1[:, idx - 1] = vs_aligned
 
     # Remove nans
-    data_matrix = np.array(
-            [vec for vec in data_matrix if not any(np.isnan(vec))]
+    data_matrix_1 = np.array(
+            [vec for vec in data_matrix_1 if not any(np.isnan(vec))]
             )
 
-    pmu_callback.label_list.remove("time")
-    save_csv("measurement_"+VERSION+".csv", pmu_callback.label_list + ["power"], data_matrix)
+    # read data - 1200MHz
+    pwr_data_2 = load_pwr(PWR_FILE_1200)
+    perf_data_2, pred_pwr_2 = load_perf(PERF_FILE_1200)
+
+    ps = np.array(pwr_data_2)
+    vs = np.array(perf_data_2)
+    print ps.shape, vs.shape
+    
+    n_evt = vs.shape[1] - 1 # get the # of events
+    data_matrix_2 = np.zeros((ps.shape[0], n_evt + 1))
+    # fill the power into the last column of data matrix
+    data_matrix_2[:, n_evt] = ps[:, 1]
+    # fill the first n_evt columns
+    for idx in range(1, vs.shape[1]):
+        vs_aligned = align_samples(ps[:, 0], vs[:, 0], vs[:, idx])
+        data_matrix_2[:, idx - 1] = vs_aligned
+
+    # Remove nans
+    data_matrix_2 = np.array(
+            [vec for vec in data_matrix_2 if not any(np.isnan(vec))]
+            )
+
+    # Integrate matrix_1 and matrix_2
+    data_matrix = np.vstack((data_matrix_1, data_matrix_2))
+
+    load_perf.label_list.remove("time")
+    save_csv("measurement_"+VERSION+".csv", load_perf.label_list + ["power"], data_matrix)
     clf = LinearRegression()
     reg = clf.fit(data_matrix[:, :n_evt], data_matrix[:, n_evt])
     pred = clf.predict(data_matrix[:, :n_evt])
@@ -302,8 +283,7 @@ def main():
     print("Error: avg: %f max: %f" %(avgErr, maxErr))
 
     # Save model
-    new_model = "./model/model." + VERSION + "." + \
-    	datetime.datetime.now().strftime("%H%M%S%m%d%Y")
+    new_model = "./model/model." + VERSION
     save_with_pickle(clf, new_model)
     print "model save to", new_model
 
@@ -311,12 +291,15 @@ def main():
     with open("./model/model_info.txt", "a+") as f:
 	f.write("\r\nCoefficients of %s\r\n" %new_model)
 	for i in range(0, n_evt):
-	    f.write("%s: " %pmu_callback.label_list[i])
+	    f.write("%s: " %load_perf.label_list[i])
 	    f.write("%s " %reg.coef_[i])
 	f.write("intercept: ")
 	f.write("%s" %reg.intercept_)
 	f.write("\r\nScore: %f\r\n" %score)
 	f.write("Error: avg: %f max: %f\r\n" %(avgErr, maxErr))
+    
+    plot(pwr_data_1, pred_pwr_1, perf_data_1)
+    plot(pwr_data_2, pred_pwr_2, perf_data_2)
 
 if __name__ == '__main__':
     main()
