@@ -10,7 +10,8 @@ import cPickle as pickle
 from sklearn.linear_model import LinearRegression
 # Usage: python bw_process ./model/model.v1
 
-size = [100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000]
+size = [1000, 2000, 3000, 4000, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000]
+MAX_CNT = 1
 #####################################################################
 def save_with_pickle(data, filename):
     """ save data to a file for future processing"""
@@ -140,40 +141,45 @@ def main():
     # Load model
     load_perf.model = load_with_pickle(filename)
 
-    net_pwr = []
+    net_pwr = dict()
 
-    for i in range(0, len(size)):
-	    pwr_filename = "./pwr_measure/size_" + str(size[i]) + ".txt"
-	    perf_filename = "./size_measure/perf_" + str(size[i]) + ".txt"
-
+    for j in range(0, MAX_CNT):
+	net_pwr[j] = []
+	for i in range(0, len(size)):
+	    pwr_filename = "./pwr_measure/size_120_%d.txt" %(size[i])
+	    perf_filename = "./size_measure/perf_120_%d.txt" %(size[i])
+	
 	    # read data
 	    meas_pwr = load_pwr(pwr_filename)
-	    pred_pwr = load_perf(perf_filename)
-	
-	    ps = np.array(meas_pwr)
+            pred_pwr = load_perf(perf_filename)
+		
+            ps = np.array(meas_pwr)
 	    vs = np.array(pred_pwr)
 	    print ps.shape, vs.shape
-	    
+		    
 	    n = 3 # [meas pwr, pred pwr, net pwr]
-	    data_matrix = np.zeros((ps.shape[0], n))
-	    # fill the measured power into the last column of data matrix
+            data_matrix = np.zeros((ps.shape[0], n))
+            # fill the measured power into the last column of data matrix
 	    data_matrix[:, 0] = ps[:, 1]
-	    # fill the aligned pred power
-	    vs_aligned = align_samples(ps[:, 0], vs[:, 0], vs[:, 1])
-	    data_matrix[:, 1] = vs_aligned
-	
+            # fill the aligned pred power
+            vs_aligned = align_samples(ps[:, 0], vs[:, 0], vs[:, 1])
+            data_matrix[:, 1] = vs_aligned
+		
 	    # Remove nans
 	    data_matrix = np.array(
-	            [vec for vec in data_matrix if not any(np.isnan(vec))]
-	            )
-	
-	    # Calculate net power
+	        [vec for vec in data_matrix if not any(np.isnan(vec))]
+ 	    )
+		
+            # Calculate net power
 	    data_matrix[:, 2] = data_matrix[:, 0] - data_matrix[:, 1]
-    	    net_pwr.append(np.mean(data_matrix[:, 2]))
-    
-    
-    plt.plot(size, net_pwr, 'b*')
-    plt.xlabel("Packet Size in 30 secs (Bytes)")
+	    avg_pwr = np.mean(data_matrix[:, 2])
+    	    net_pwr[j].append(avg_pwr)
+    	print net_pwr[j]
+
+    for j in range(0, MAX_CNT):
+    	plt.plot(size, net_pwr[j], 'b*')
+    #plt.axis([0, 51000, 0, 0.1])
+    plt.xlabel("Packet Size in 10 secs (Bytes)")
     plt.ylabel("Network Power Consumption (W)")
     plt.show()
 

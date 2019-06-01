@@ -169,7 +169,10 @@ def main():
 	
 	    # Calculate net power
 	    data_matrix[:, 2] = data_matrix[:, 0] - data_matrix[:, 1]
-    	    net_pwr.append(np.mean(data_matrix[:, 2]))
+	    avg_pwr = np.mean(data_matrix[:, 2])
+	    print data_matrix
+	    print avg_pwr
+    	    net_pwr.append(avg_pwr)
     
     
     plt.plot(bw, net_pwr, 'b*')
