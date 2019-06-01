@@ -53,6 +53,7 @@ psu.write(":DATAout:ITEM 35,0\r\n"); item = "volt,curr,pf" # for more details
 #psu.write(":CURR:RANG 0.1\r\n") # Current range to minimum
 #psu.write(":CURR:RANG 1.0\r\n") # Current range to minimum
 
+
 execution_time_in_ms = 10 * 1000 # 10 secs
 version = None
 if len(sys.argv) == 2:
@@ -60,7 +61,7 @@ if len(sys.argv) == 2:
 
 filename = None
 if version is not None:
-	filename = "./pwr_measure/size_120_" + version + ".txt"
+	filename = "./pwr_measure/cpu_" + version + ".txt"
 else:
 	filename = "./pwr_measure/size_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
 		".txt"
