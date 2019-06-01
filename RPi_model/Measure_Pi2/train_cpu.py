@@ -15,11 +15,17 @@ from sklearn.linear_model import LinearRegression
 #PERF_FILE_1200 = "./cpu_measure/cpu_1200_16070005302019.txt"
 #VERSION = "v1"
 
-PWR_FILE_600 = "./pwr_measure/pwr_600.2_16123305302019.txt"
-PWR_FILE_1200 = "./pwr_measure/pwr_1200.2_16102605302019.txt"
-PERF_FILE_600 = "./cpu_measure/cpu_600.2_16112905302019.txt"
-PERF_FILE_1200 = "./cpu_measure/cpu_1200.2_16092105302019.txt"
-VERSION = "v2"
+#PWR_FILE_600 = "./pwr_measure/pwr_600.2_16123305302019.txt"
+#PWR_FILE_1200 = "./pwr_measure/pwr_1200.2_16102605302019.txt"
+#PERF_FILE_600 = "./cpu_measure/cpu_600.2_16112905302019.txt"
+#PERF_FILE_1200 = "./cpu_measure/cpu_1200.2_16092105302019.txt"
+#VERSION = "v2"
+
+PWR_FILE_600 = "./pwr_measure/600.txt"
+PWR_FILE_1200 = "./pwr_measure/1200.txt"
+PERF_FILE_600 = "./cpu_measure/600.txt"
+PERF_FILE_1200 = "./cpu_measure/1200.txt"
+VERSION = "v3"
 #####################################################################
 def save_with_pickle(data, filename):
     """ save data to a file for future processing"""
@@ -152,7 +158,7 @@ def align_samples(target_ts, ts, vs):
 EVT_RATIO = 0.5
 COMBINE_PP = True
 PLOT_TYPES = ["MP", "PP", "freq", "util"]
-MAX_TIME = 80.0
+MAX_TIME = 100.0
 
 def plot(pwr, pred_pwr, perf):
     num_plots = len(PLOT_TYPES)

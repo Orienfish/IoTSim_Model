@@ -8,3 +8,8 @@ Coefficients of ./model/model.v2
 freq: 1.99236157036e-06 util: 0.0164553619871 intercept: 1.59350594727
 Score: 0.926757
 Error: avg: 0.029107 max: 0.154508
+
+Coefficients of ./model/model.v3
+freq: 1.6358577974e-06 util: 0.0210389151921 intercept: 1.78668133211
+Score: 0.934115
+Error: avg: 0.015909 max: 0.212945
