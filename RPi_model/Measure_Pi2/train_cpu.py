@@ -21,11 +21,17 @@ from sklearn.linear_model import LinearRegression
 #PERF_FILE_1200 = "./cpu_measure/cpu_1200.2_16092105302019.txt"
 #VERSION = "v2"
 
-PWR_FILE_600 = "./pwr_measure/cpu_600.txt"
-PWR_FILE_1200 = "./pwr_measure/cpu_1200.txt"
-PERF_FILE_600 = "./cpu_measure/cpu_600.txt"
-PERF_FILE_1200 = "./cpu_measure/cpu_1200.txt"
-VERSION = "v4"
+PWR_FILE_600 = "./pwr_measure/600.txt"
+PWR_FILE_1200 = "./pwr_measure/1200.txt"
+PERF_FILE_600 = "./cpu_measure/600.txt"
+PERF_FILE_1200 = "./cpu_measure/1200.txt"
+VERSION = "v3"
+
+#PWR_FILE_600 = "./pwr_measure/cpu_600.txt"
+#PWR_FILE_1200 = "./pwr_measure/cpu_1200.txt"
+#PERF_FILE_600 = "./cpu_measure/cpu_600.txt"
+#PERF_FILE_1200 = "./cpu_measure/cpu_1200.txt"
+#VERSION = "v4"
 #####################################################################
 def save_with_pickle(data, filename):
     """ save data to a file for future processing"""
