@@ -60,9 +60,9 @@ if len(sys.argv) == 2:
 
 filename = None
 if version is not None:
-	filename = "./pwr_measure/cpu_" + version + ".txt"
+	filename = "./bt_measure/pwr_" + version + ".txt"
 else:
-	filename = "./pwr_measure/size_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
+	filename = "./bt_measure/pwr_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
 		".txt"
 f = open(filename, "w")
 
