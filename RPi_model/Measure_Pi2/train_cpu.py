@@ -21,17 +21,17 @@ from sklearn.linear_model import LinearRegression
 #PERF_FILE_1200 = "./cpu_measure/cpu_1200.2_16092105302019.txt"
 #VERSION = "v2"
 
-PWR_FILE_600 = "./pwr_measure/600.txt"
-PWR_FILE_1200 = "./pwr_measure/1200.txt"
-PERF_FILE_600 = "./cpu_measure/600.txt"
-PERF_FILE_1200 = "./cpu_measure/1200.txt"
-VERSION = "v3"
+#PWR_FILE_600 = "./pwr_measure/600.txt"
+#PWR_FILE_1200 = "./pwr_measure/1200.txt"
+#PERF_FILE_600 = "./cpu_measure/600.txt"
+#PERF_FILE_1200 = "./cpu_measure/1200.txt"
+#VERSION = "v3"
 
-#PWR_FILE_600 = "./pwr_measure/cpu_600.txt"
-#PWR_FILE_1200 = "./pwr_measure/cpu_1200.txt"
-#PERF_FILE_600 = "./cpu_measure/cpu_600.txt"
-#PERF_FILE_1200 = "./cpu_measure/cpu_1200.txt"
-#VERSION = "v4"
+PWR_FILE_600 = "./pwr_measure/cpu_600.txt"
+PWR_FILE_1200 = "./pwr_measure/cpu_1200.txt"
+PERF_FILE_600 = "./cpu_measure/cpu_600.txt"
+PERF_FILE_1200 = "./cpu_measure/cpu_1200.txt"
+VERSION = "v4"
 #####################################################################
 def save_with_pickle(data, filename):
     """ save data to a file for future processing"""
@@ -195,12 +195,16 @@ def plot(pwr, pred_pwr, perf):
     ax_dict["MP"].set_ylim(3.0, 6.0)
     ax_dict["MP"].set_title("Power (Measurement)")
     ax_dict["MP"].set_ylabel("Power (W)")
+    line.set_label("Power Measurement")
+    ax_dict["MP"].legend()
 
     if "PP" in ax_dict:
         ax_dict["PP"].set_xlim(5.0, MAX_TIME)
         ax_dict["PP"].set_ylim(3.0, 6.0)
-        ax_dict["PP"].set_title("Power (Prediction)")
+        ax_dict["PP"].set_title("Power (Measurement and Prediction)")
         ax_dict["PP"].set_ylabel("Power (W)")
+        line2.set_label("Power Prediction")
+        ax_dict["PP"].legend()
 
     ax_dict["freq"].set_xlim(5.0, MAX_TIME)
     ax_dict["freq"].set_ylim(0.0, 1500000.00)
@@ -214,7 +218,7 @@ def plot(pwr, pred_pwr, perf):
 
     plt.xlabel("Time (sec)")
     plt.tight_layout(pad=0.0, w_pad=0.0, h_pad=0.0)
-
+    plt.legend()
     plt.show()
 
 ###################################################################
