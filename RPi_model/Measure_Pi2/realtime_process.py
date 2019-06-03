@@ -76,13 +76,21 @@ load_perf.label_list = None
 load_perf.model = None
 
 def load_time(timefile):
-    time_data = []
+    time_pre = []
+    time_start = []
+    time_end = []
     with open(timefile, "r") as f:
+        line = f.readline()
+        time_pre.append(float(line))
+        line = f.readline()
+        time_pre.append(float(line))
 	for line in f.readlines():
-            elem = line.strip().split(',')[0]
-    	    print elem
-	    time_data.append(float(elem))
-    return time_data
+            elem0 = line.strip().split(',')[0]
+    	    elem1 = line.strip().split(',')[1]
+	    print elem0, elem1
+	    time_start.append(float(elem0))
+	    time_end.append(float(elem1))
+    return time_pre, time_start, time_end
 
 ###################################################################
 
@@ -151,14 +159,14 @@ def main():
 
     net_pwr = []
 
-    pwr_filename = "./pwr_realtime/pwr_600_2000.txt"
-    perf_filename = "./pwr_realtime/600_2000.txt"
-    time_filename = "./pwr_realtime/time_600_2000.txt"
+    pwr_filename = "./pwr_realtime/pwr_600_1000.txt"
+    perf_filename = "./pwr_realtime/600_1000.txt"
+    time_filename = "./pwr_realtime/time_600_1000.txt"
 
     # read data
     meas_pwr = load_pwr(pwr_filename)
     pred_pwr = load_perf(perf_filename)
-    time_stamp = load_time(time_filename)
+    time_pre, time_start, time_end = load_time(time_filename)
     ps = np.array(meas_pwr)
     vs = np.array(pred_pwr)
 
@@ -188,11 +196,16 @@ def main():
     """
     plt.figure()
     line1, = plt.plot(ps[:, 0], ps[:, 1], 'b-', label="Power Measurement")
-    line2, = plt.plot(vs[:, 0], vs[:, 1], 'r:', label="Power Prediction")
-    for t in time_stamp:
+    line2, = plt.plot(vs[:, 0], vs[:, 1], 'r:', label="CPU Power Prediction")
+    for t in time_pre:
+        plt.axvline(x=t, color='brown', linestyle='--')
+    for t in time_start:
         plt.axvline(x=t, color='g', linestyle='--')
+    for t in time_end:
+        plt.axvline(x=t, color='purple', linestyle='--')
     plt.xlabel("Time (seconds)")
     plt.ylabel("Power Consumption (W)")
+    plt.xlim(0.0, 40.0)
     plt.title("Wi-Fi Power Consumption")
     plt.legend()
     plt.show()
