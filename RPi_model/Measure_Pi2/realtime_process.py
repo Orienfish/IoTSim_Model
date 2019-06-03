@@ -159,9 +159,9 @@ def main():
 
     net_pwr = []
 
-    pwr_filename = "./pwr_realtime/pwr_1200_1000_2.txt"
-    perf_filename = "./pwr_realtime/1200_1000_2.txt"
-    time_filename = "./pwr_realtime/time_1200_1000_2.txt"
+    pwr_filename = "./pwr_realtime/pwr_600_1000_v1.txt"
+    perf_filename = "./pwr_realtime/600_1000_v1.txt"
+    time_filename = "./pwr_realtime/time_600_1000_v1.txt"
 
     # read data
     meas_pwr = load_pwr(pwr_filename)
@@ -194,7 +194,7 @@ def main():
 	    print avg_pwr
     	    net_pwr.append(avg_pwr)
     """
-    plt.figure()
+    plt.figure(figsize=(8,6), dpi=100)
     line1, = plt.plot(ps[:, 0], ps[:, 1], 'b-', label="Power Measurement")
     line2, = plt.plot(vs[:, 0], vs[:, 1], 'r:', label="CPU Power Prediction")
     for t in time_pre:
@@ -208,6 +208,7 @@ def main():
     plt.xlabel("Time (seconds)")
     plt.ylabel("Power Consumption (W)")
     plt.xlim(0.0, 40.0)
+    plt.ylim(3.3, 4.2)
     # plt.title("Wi-Fi Power Consumption")
     plt.legend()
     plt.show()
