@@ -38,7 +38,7 @@ S'<'
 NNNI-1
 I-1
 I0
-tbS'\xb51\xe2\xc2\xff\xdf\x80@'
+tbS'\x94P\xca\x8d\xecWT@'
 tRp14
 sS'singular_'
 p15
@@ -55,7 +55,7 @@ tRp18
 (I2
 tg13
 I00
-S'K\xeb\xe5\xe7f\xd9\rB\x9e\x0c\xdft=l\xa3A'
+S'\xa5\xc6\xbb\x83\x86\xa3mA,\xa1\xc8\xf6\xaa\n\x8d@'
 tbsS'coef_'
 p19
 g16
@@ -67,7 +67,7 @@ tRp20
 (I2
 tg13
 I00
-S'S2\xad4w\xaef>\xa2\x98k\xd3\x90 %>'
+S'\xd5\xb5N[\x90\xb6\xc0>\x11\x1bP\xa6\xac\xd9\x90?'
 tbsS'_sklearn_version'
 p21
 S'0.18'
@@ -79,6 +79,6 @@ sS'intercept_'
 p24
 g11
 (g13
-S'\xe7\xaf\xd2e\x06\xa7\r@'
+S'\xf0\xd2\x97\x17\x00\x7f\xf9?'
 tRp25
 sb.
