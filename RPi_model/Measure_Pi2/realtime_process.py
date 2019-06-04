@@ -80,6 +80,9 @@ def load_time(timefile):
     time_start = []
     time_end = []
     with open(timefile, "r") as f:
+        # time import
+        line = f.readline()
+        time_pre.append(float(line))
         # time up
         line = f.readline()
         time_pre.append(float(line))
@@ -199,16 +202,17 @@ def main():
     # line2, = plt.plot(vs[:, 0], vs[:, 1], 'r:', label="CPU Power Prediction")
     for t in time_pre:
         plt.axvline(x=t, color='brown', linestyle='--')
-    plt.axvline(x=time_start[0], color='g', linestyle='--', label="Start Sending")
-    plt.axvline(x=time_end[0], color='purple', linestyle='--', label="Finish Sending")
+    plt.axvline(x=time_start[0], color='g', linestyle='--', label="Start")
+    plt.axvline(x=time_end[0], color='purple', linestyle='--', label="Finish")
     for t in time_start:
         plt.axvline(x=t, color='g', linestyle='--')
     for t in time_end:
         plt.axvline(x=t, color='purple', linestyle='--')
     plt.xlabel("Time (seconds)")
     plt.ylabel("Power Consumption (W)")
-    plt.xlim(0.0, 40.0)
-    plt.ylim(3.3, 4.2)
+    plt.xlim(0.0, 60.0)
+    # plt.ylim(3.0, 3.5) # for 600MHz
+    plt.ylim(3.2, 4.0) # for 1200MHz
     # plt.title("Wi-Fi Power Consumption")
     plt.legend()
     plt.show()
