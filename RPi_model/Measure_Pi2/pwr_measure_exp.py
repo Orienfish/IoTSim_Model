@@ -1,6 +1,6 @@
 # For single time power measurement in a serie
 # Store the measured data in ./pwr_measure/
-# Usage: python pwr_measure.py cpu_600
+# Usage: python pwr_measure_exp.py 600
 import sys
 import os
 import serial, select
@@ -53,16 +53,16 @@ psu.write(":DATAout:ITEM 35,0\r\n"); item = "volt,curr,pf" # for more details
 #psu.write(":CURR:RANG 0.1\r\n") # Current range to minimum
 #psu.write(":CURR:RANG 1.0\r\n") # Current range to minimum
 
-execution_time_in_ms = 60 * 1000 # 60 secs
+execution_time_in_ms = 1100 * 1000 # 60 secs
 version = None
 if len(sys.argv) == 2:
     version = sys.argv[1]
 
 filename = None
 if version is not None:
-	filename = "./pwr_bt_realtime/pwr_%s.txt" %version
+	filename = "./pwr_bt_exp/pwr_%s.txt" %version
 else:
-	filename = "./pwr_bt_realtime/pwr_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
+	filename = "./pwr_bt_exp/pwr_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
 		".txt"
 f = open(filename, "w")
 
