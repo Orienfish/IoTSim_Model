@@ -60,9 +60,9 @@ if len(sys.argv) == 2:
 
 filename = None
 if version is not None:
-	filename = "./pwr_realtime/pwr_%s.txt" %version
+	filename = "./pwr_bt_realtime/pwr_%s.txt" %version
 else:
-	filename = "./pwr_realtime/pwr_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
+	filename = "./pwr_bt_realtime/pwr_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
 		".txt"
 f = open(filename, "w")
 
