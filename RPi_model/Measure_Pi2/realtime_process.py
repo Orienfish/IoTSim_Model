@@ -80,10 +80,10 @@ def load_time(timefile):
     time_start = []
     time_end = []
     with open(timefile, "r") as f:
+        # time up
         line = f.readline()
         time_pre.append(float(line))
-        line = f.readline()
-        time_pre.append(float(line))
+
 	for line in f.readlines():
             elem0 = line.strip().split(',')[0]
     	    elem1 = line.strip().split(',')[1]
@@ -152,23 +152,23 @@ def main():
         print "Please specify a model!"
 	sys.exit()
     else:
-        filename = sys.argv[1] 
+        version = sys.argv[1] 
 
     # Load model
-    load_perf.model = load_with_pickle(filename)
+    # load_perf.model = load_with_pickle(filename)
 
     net_pwr = []
 
-    pwr_filename = "./pwr_realtime/pwr_600_1000_v1.txt"
-    perf_filename = "./pwr_realtime/600_1000_v1.txt"
-    time_filename = "./pwr_realtime/time_600_1000_v1.txt"
+    pwr_filename = "./pwr_bt_realtime/pwr_%s.txt" %version
+    # perf_filename = "./pwr_realtime/%s.txt" %version
+    time_filename = "./pwr_bt_realtime/time_%s.txt" %version
 
     # read data
     meas_pwr = load_pwr(pwr_filename)
-    pred_pwr = load_perf(perf_filename)
+    # pred_pwr = load_perf(perf_filename)
     time_pre, time_start, time_end = load_time(time_filename)
     ps = np.array(meas_pwr)
-    vs = np.array(pred_pwr)
+    # vs = np.array(pred_pwr)
 
     """
     for i in range(0, len(bw)):
@@ -196,7 +196,7 @@ def main():
     """
     plt.figure(figsize=(8,6), dpi=100)
     line1, = plt.plot(ps[:, 0], ps[:, 1], 'b-', label="Power Measurement")
-    line2, = plt.plot(vs[:, 0], vs[:, 1], 'r:', label="CPU Power Prediction")
+    # line2, = plt.plot(vs[:, 0], vs[:, 1], 'r:', label="CPU Power Prediction")
     for t in time_pre:
         plt.axvline(x=t, color='brown', linestyle='--')
     plt.axvline(x=time_start[0], color='g', linestyle='--', label="Start Sending")
