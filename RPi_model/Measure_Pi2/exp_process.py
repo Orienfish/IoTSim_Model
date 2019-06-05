@@ -113,15 +113,16 @@ def cal_avg_pwr(meas_pwr_array, tlist):
 	# the interval is too short and no pwr measurements in (st, ft)
 	else:
 	    lt = np.array(
-		[1 if vec[0] < ft else 0 for vec in meas_pwr_array]
+		[1 if vec[0] < st else 0 for vec in meas_pwr_array]
 		)
-	    next_t_idx = np.sum(lt)
-	    next_vec = meas_pwr_array[next_t_idx, :] # the next vec
+	    prev_t_idx = np.sum(lt)
+	    prev_vec = meas_pwr_array[prev_t_idx - 1, :]
+	    next_vec = meas_pwr_array[prev_t_idx, :] # the next vec
             # print "prev_vec: ", prev_vec
             # print "next_vec: ", next_vec 
 	    # calculate avg pwr
 	    dt = ft - st
-	    de = dt * next_vec[1]
+	    de = dt * np.mean(np.array(prev_vec[1], next_vec[1]))
 	    total_time += dt
             total_energy += de
             # print "%f, %f, %f, %f" %(st, ft, dt, de)
@@ -140,7 +141,7 @@ def plot_rt_pwr(ps, time_data):
 	    plt.axvline(x=ft, color='purple', linestyle='--')
     plt.xlabel("Time (seconds)")
     plt.ylabel("Power Consumption (W)")
-    plt.xlim(300.0, 400.0)
+    plt.xlim(0, 100.0)
     # plt.ylim(3.0, 3.5) # for 600MHz
     plt.ylim(3.2, 4.0) # for 1200MHz
     # plt.title("Wi-Fi Power Consumption")
