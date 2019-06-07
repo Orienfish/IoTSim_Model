@@ -53,10 +53,14 @@ psu.write(":DATAout:ITEM 35,0\r\n"); item = "volt,curr,pf" # for more details
 #psu.write(":CURR:RANG 0.1\r\n") # Current range to minimum
 #psu.write(":CURR:RANG 1.0\r\n") # Current range to minimum
 
-execution_time_in_ms = 1100 * 1000 # 60 secs
 version = None
-if len(sys.argv) == 2:
+if len(sys.argv) == 3:
     version = sys.argv[1]
+    time_sec = int(sys.argv[2])
+else:
+    print "The number of parameters is not right!"
+    sys.exit()
+execution_time_in_ms = time_sec * 1000 # seconds
 
 filename = None
 if version is not None:
