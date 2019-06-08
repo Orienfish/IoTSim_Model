@@ -53,7 +53,7 @@ psu.write(":DATAout:ITEM 35,0\r\n"); item = "volt,curr,pf" # for more details
 #psu.write(":CURR:RANG 0.1\r\n") # Current range to minimum
 #psu.write(":CURR:RANG 1.0\r\n") # Current range to minimum
 
-elapsed_time_in_ms = 200 * 1000 # 100 secs
+elapsed_time_in_ms = 200 * 1000 # 200 secs
 version = None
 if len(sys.argv) == 2:
     version = sys.argv[1]
