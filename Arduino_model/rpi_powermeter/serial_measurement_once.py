@@ -79,7 +79,6 @@ extra_item_size = item.count(',')
 if extra_item_size > 0:
 	item += ",mul"
 
-start_time = get_time_milli()
 log(f, datetime.datetime.now().strftime("# %a %b %d %H:%M:%S %Y"))
 log(f, "abstime,time_stamp," + item)
 
@@ -90,6 +89,7 @@ bTypeError = False
 
 print("Start measurement...\r\n")
 # send start signal to Arduino
+start_time = get_time_milli()
 GPIO.output(START_SIG_PIN, GPIO.HIGH)
 # start power measurement
 while True:
