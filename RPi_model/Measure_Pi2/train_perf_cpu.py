@@ -9,6 +9,8 @@ import sklearn
 import cPickle as pickle
 from sklearn.linear_model import LinearRegression
 
+from lib.perf_reader import PerfReader
+
 #PWR_FILE_600 = "./pwr_measure/pwr_600_16050905302019.txt"
 #PWR_FILE_1200 = "./pwr_measure/pwr_1200_16080405302019.txt"
 #PERF_FILE_600 = "./cpu_measure/cpu_600_16040405302019.txt"
@@ -27,11 +29,23 @@ from sklearn.linear_model import LinearRegression
 #PERF_FILE_1200 = "./cpu_measure/1200.txt"
 #VERSION = "v3"
 
-PWR_FILE_600 = "./pwr_measure/cpu_600.txt"
-PWR_FILE_1200 = "./pwr_measure/cpu_1200.txt"
-PERF_FILE_600 = "./cpu_measure/cpu_600.txt"
-PERF_FILE_1200 = "./cpu_measure/cpu_1200.txt"
-VERSION = "v4"
+#PWR_FILE_600 = "./pwr_measure/cpu_600.txt"
+#PWR_FILE_1200 = "./pwr_measure/cpu_1200.txt"
+#PERF_FILE_600 = "./cpu_measure/cpu_600.txt"
+#PERF_FILE_1200 = "./cpu_measure/cpu_1200.txt"
+#VERSION = "v4"
+
+PWR_FILE_600 = "./pwr_measure/cpu_perf1_600.txt"
+PWR_FILE_1200 = "./pwr_measure/cpu_perf1_1200.txt"
+PERF_FILE_600 = "./cpu_measure/perf1_600.txt"
+PERF_FILE_1200 = "./cpu_measure/perf1_1200.txt"
+VERSION = "perf_v1"
+
+#PWR_FILE_600 = "./pwr_measure/cpu_perf2_600.txt"
+#PWR_FILE_1200 = "./pwr_measure/cpu_perf2_1200.txt"
+#PERF_FILE_600 = "./cpu_measure/perf2_600.txt"
+#PERF_FILE_1200 = "./cpu_measure/perf2_1200.txt"
+#VERSION = "perf_v2"
 #####################################################################
 def save_with_pickle(data, filename):
     """ save data to a file for future processing"""
@@ -79,33 +93,32 @@ def load_pwr(pwrfile):
 			line = f.readline()
 	return train_data
 			
-def load_perf(perffile):
-	train_data = []
-	pred_pwr_list = []
-	with open(perffile, "r") as f:
-		line = f.readline()
-		load_perf.label_list = line.strip().split(",")
-		# print "label_list: ", load_perf.label_list
+def load_perf(time, pmu_dict):
+	if load_perf.label_list is None: # first sample
+		load_perf.label_list = ["time"]
+		load_perf.label_list += sorted(list(pmu_dict.keys()))
 		
-		line = f.readline() # first data
-		while line:
-			elem = line.strip().split(",")
-			# new vec: [time, freq, util]
-			new_vec = np.zeros(len(load_perf.label_list))
-			for i in range(0, len(load_perf.label_list)):
-				new_vec[i] = float(elem[i])
-			train_data.append(new_vec)
-			
-			if load_perf.model:
-				pred_pwr_list.append(load_perf.model.predict([new_vec[1:]])[0])
-			else:
-				pred_pwr_list.append(0.0)
-			
-			line = f.readline()
-	return train_data, pred_pwr_list
+	if len(pmu_dict) != len(load_perf.label_list) - 1:
+		print("PMU dict len does not match!")
+		return
+	
+	new_vec = np.zeros(1 + len(pmu_dict))
+	new_vec[0] = time # seconds
+	for evt in pmu_dict:
+		new_vec[load_perf.label_list.index(evt)] = pmu_dict[evt]
+	load_perf.train_data.append(new_vec)
+	
+	if load_perf.model is not None: # predict
+		pred_pwr = load_perf.model.predict([new_vec[1:]])[0]
+	else:
+		pred_pwr = 0.0
+	load_perf.pred_pwr_list.append([new_vec[0], pred_pwr])
+	return
 			
 load_perf.label_list = None
 load_perf.model = None
+load_perf.train_data = []
+load_perf.pred_pwr_list = []
 
 ###################################################################
 
@@ -240,13 +253,18 @@ def main():
 
     # Load model if exists
     load_perf.model = load_with_pickle(filename)
+    
+    # init reader
+    reader = PerfReader()
 
     # read data - 600MHz
     pwr_data_1 = load_pwr(PWR_FILE_600)
-    perf_data_1, pred_pwr_1 = load_perf(PERF_FILE_600)
+    load_perf.train_data = []
+    load_perf.pred_pwr_list = []
+    reader.perf_reader(PERF_FILE_600, load_perf)
 
     ps = np.array(pwr_data_1)
-    vs = np.array(perf_data_1)
+    vs = np.array(load_perf.train_data)
     print ps.shape, vs.shape
     
     n_evt = vs.shape[1] - 1 # get the # of events
@@ -265,11 +283,14 @@ def main():
 
     # read data - 1200MHz
     pwr_data_2 = load_pwr(PWR_FILE_1200)
-    perf_data_2, pred_pwr_2 = load_perf(PERF_FILE_1200)
+    load_perf.train_data = []
+    load_perf.pred_pwr_list = []
+    reader.perf_reader(PERF_FILE_1200, load_perf)
 
     ps = np.array(pwr_data_2)
-    vs = np.array(perf_data_2)
+    vs = np.array(load_perf.train_data)
     print ps.shape, vs.shape
+    print ps[:, 0], vs[:, 0]
     
     n_evt = vs.shape[1] - 1 # get the # of events
     data_matrix_2 = np.zeros((ps.shape[0], n_evt + 1))
@@ -281,11 +302,13 @@ def main():
         data_matrix_2[:, idx - 1] = vs_aligned
 
     # Remove nans
+    print data_matrix_2[10, :]
     data_matrix_2 = np.array(
             [vec for vec in data_matrix_2 if not any(np.isnan(vec))]
             )
 
     # Integrate matrix_1 and matrix_2
+    print data_matrix_1.shape, data_matrix_2.shape
     data_matrix = np.vstack((data_matrix_1, data_matrix_2))
 
     load_perf.label_list.remove("time")
