@@ -18,3 +18,14 @@ Coefficients of ./model/model.v4
 freq: 1.4995596404e-06 util: 0.0183259386149 intercept: 1.97313572567
 Score: 0.925133
 Error: avg: 0.025987 max: 0.332113
+
+Coefficients of ./model/model.perf_v1
+cache-misses: 1.604158848953897e-07 instructions: 3.8251433694302514e-09 intercept: 3.1186404101507303
+Score: 0.792358
+Error: avg: 0.036643 max: 0.347124
+
+Coefficients of ./model/model.perf_v2
+L1-dcache-loads: 1.1201174772923045e-09 L1-dcache-stores: -3.0816554910780796e-10 branch-instructions: -2.89318560875291e-09 branch-misses: -8.559663917289132e-08 cache-misses: -1.4362203201178858e-07 cache-references: 1.505825052950235e-09 cpu-cycles: 2.0684120184486966e-09 instructions: 3.135143357712678e-10 r110: 1.6033898690248393e-07 r13C: 0.0 r1A2: 0.0 r1C2: 1.3949913999186216e-07 intercept: 3.096927605408612
+Score: 0.917879
+Error: avg: 0.024100 max: 0.300376
+

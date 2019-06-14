@@ -35,17 +35,17 @@ from lib.perf_reader import PerfReader
 #PERF_FILE_1200 = "./cpu_measure/cpu_1200.txt"
 #VERSION = "v4"
 
-PWR_FILE_600 = "./pwr_measure/cpu_perf1_600.txt"
-PWR_FILE_1200 = "./pwr_measure/cpu_perf1_1200.txt"
-PERF_FILE_600 = "./cpu_measure/perf1_600.txt"
-PERF_FILE_1200 = "./cpu_measure/perf1_1200.txt"
-VERSION = "perf_v1"
+#PWR_FILE_600 = "./pwr_measure/cpu_perf1_600.txt"
+#PWR_FILE_1200 = "./pwr_measure/cpu_perf1_1200.txt"
+#PERF_FILE_600 = "./cpu_measure/perf1_600.txt"
+#PERF_FILE_1200 = "./cpu_measure/perf1_1200.txt"
+#VERSION = "perf_v1"
 
-#PWR_FILE_600 = "./pwr_measure/cpu_perf2_600.txt"
-#PWR_FILE_1200 = "./pwr_measure/cpu_perf2_1200.txt"
-#PERF_FILE_600 = "./cpu_measure/perf2_600.txt"
-#PERF_FILE_1200 = "./cpu_measure/perf2_1200.txt"
-#VERSION = "perf_v2"
+PWR_FILE_600 = "./pwr_measure/cpu_perf2_600.txt"
+PWR_FILE_1200 = "./pwr_measure/cpu_perf2_1200.txt"
+PERF_FILE_600 = "./cpu_measure/perf2_600.txt"
+PERF_FILE_1200 = "./cpu_measure/perf2_1200.txt"
+VERSION = "perf_v2"
 #####################################################################
 def save_with_pickle(data, filename):
     """ save data to a file for future processing"""
@@ -176,10 +176,10 @@ def align_samples(target_ts, ts, vs):
 
 EVT_RATIO = 0.5
 COMBINE_PP = True
-PLOT_TYPES = ["MP", "PP", "freq", "util"]
-MAX_TIME = 200.0
+PLOT_TYPES = ["MP", "PP", "inst", "cmss"]
+MAX_TIME = 150.0
 
-def plot(pwr, pred_pwr, perf):
+def plot(pwr, perf):
     num_plots = len(PLOT_TYPES)
     if COMBINE_PP:
         num_plots -= 1
@@ -195,14 +195,14 @@ def plot(pwr, pred_pwr, perf):
             plot_idx += 1
 
     meas_pwr_array = np.array(pwr)
-    pred_pwr_array = np.array(pred_pwr)
+    #pred_pwr_array = np.array(pred_pwr)
     perf_array = np.array(perf)
 
     line, = ax_dict["MP"].plot(meas_pwr_array[:, 0], meas_pwr_array[:, 1], color="b")
-    line2, = ax_dict["PP"].plot(perf_array[:, 0], pred_pwr_array, color="r")
+    #line2, = ax_dict["PP"].plot(perf_array[:, 0], pred_pwr_array, color="r")
 
-    line_freq, = ax_dict["freq"].plot(perf_array[:, 0], perf_array[:, 1], color="g")
-    line_util, = ax_dict["util"].plot(perf_array[:, 0], perf_array[:, 2], color="purple")
+    line_inst, = ax_dict["inst"].plot(perf_array[:, 0], perf_array[:, 1], color="g")
+    line_cmss, = ax_dict["cmss"].plot(perf_array[:, 0], perf_array[:, 2], color="purple")
 
     ax_dict["MP"].set_xlim(5.0, MAX_TIME)
     ax_dict["MP"].set_ylim(3.0, 6.0)
@@ -211,23 +211,21 @@ def plot(pwr, pred_pwr, perf):
     line.set_label("Power Measurement")
     ax_dict["MP"].legend()
 
-    if "PP" in ax_dict:
-        ax_dict["PP"].set_xlim(5.0, MAX_TIME)
-        ax_dict["PP"].set_ylim(3.0, 6.0)
-        ax_dict["PP"].set_title("Power (Measurement and Prediction)")
-        ax_dict["PP"].set_ylabel("Power (W)")
-        line2.set_label("Power Prediction")
-        ax_dict["PP"].legend()
+    #if "PP" in ax_dict:
+    #    ax_dict["PP"].set_xlim(5.0, MAX_TIME)
+    #    ax_dict["PP"].set_ylim(3.0, 6.0)
+    #    ax_dict["PP"].set_title("Power (Measurement and Prediction)")
+    #    ax_dict["PP"].set_ylabel("Power (W)")
+    #    line2.set_label("Power Prediction")
+    #    ax_dict["PP"].legend()
 
-    ax_dict["freq"].set_xlim(5.0, MAX_TIME)
-    ax_dict["freq"].set_ylim(0.0, 1500000.00)
-    ax_dict["freq"].set_title("PMU - Frequency")
-    ax_dict["freq"].set_ylabel("Instructions")
+    ax_dict["inst"].set_xlim(5.0, MAX_TIME)
+    ax_dict["inst"].set_ylim(0.0, 1e8)
+    ax_dict["inst"].set_ylabel("Instructions")
 
-    ax_dict["util"].set_xlim(5.0, MAX_TIME)
-    ax_dict["util"].set_ylim(0.0, 110.00)
-    ax_dict["util"].set_title("PMU - CPU Utilization")
-    ax_dict["util"].set_ylabel("CPU Utilization")
+    ax_dict["cmss"].set_xlim(5.0, MAX_TIME)
+    ax_dict["cmss"].set_ylim(1e6, 1e9)
+    ax_dict["cmss"].set_ylabel("Cache Misses")
 
     plt.xlabel("Time (sec)")
     plt.tight_layout(pad=0.0, w_pad=0.0, h_pad=0.0)
@@ -262,6 +260,7 @@ def main():
     load_perf.train_data = []
     load_perf.pred_pwr_list = []
     reader.perf_reader(PERF_FILE_600, load_perf)
+    perf_data_1 = load_perf.train_data
 
     ps = np.array(pwr_data_1)
     vs = np.array(load_perf.train_data)
@@ -286,11 +285,11 @@ def main():
     load_perf.train_data = []
     load_perf.pred_pwr_list = []
     reader.perf_reader(PERF_FILE_1200, load_perf)
+    perf_data_2 = load_perf.train_data
 
     ps = np.array(pwr_data_2)
     vs = np.array(load_perf.train_data)
     print ps.shape, vs.shape
-    print ps[:, 0], vs[:, 0]
     
     n_evt = vs.shape[1] - 1 # get the # of events
     data_matrix_2 = np.zeros((ps.shape[0], n_evt + 1))
@@ -302,7 +301,6 @@ def main():
         data_matrix_2[:, idx - 1] = vs_aligned
 
     # Remove nans
-    print data_matrix_2[10, :]
     data_matrix_2 = np.array(
             [vec for vec in data_matrix_2 if not any(np.isnan(vec))]
             )
@@ -337,8 +335,8 @@ def main():
 	f.write("\r\nScore: %f\r\n" %score)
 	f.write("Error: avg: %f max: %f\r\n" %(avgErr, maxErr))
     
-    plot(pwr_data_1, pred_pwr_1, perf_data_1)
-    plot(pwr_data_2, pred_pwr_2, perf_data_2)
+    plot(pwr_data_1, perf_data_1)
+    plot(pwr_data_2, perf_data_2)
 
 if __name__ == '__main__':
     main()

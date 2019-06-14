@@ -6,10 +6,11 @@ import time
 
 class PerfReader(object):
     def __init__(self):
-        self.prev_time = None 
-        self.pmu_dict = dict()
+        pass
 
     def perf_reader(self, file, callback):
+        self.prev_time = None 
+        self.pmu_dict = dict()
 	self.callback = callback
         f = open(file, "r")
 	line = f.readline()
