@@ -1,11 +1,11 @@
 # Simple script to read power trace and time stamps to plot a 
-# realtime power curve during Wi-Fi wakeup
+# realtime power curve during Bluetooth wakeup
 # The file path of power and time text files are specified in
 # the main function
-# Usage: python realtime_process.py 600_1000_nosample
-# 600MHz is the frequency, 1000bps is the bandwidth
-# bound, no sample means no performance sampling on the
-# running Pi
+# Usage: python realtime_process.py 600
+# 600MHz is the frequency, no bandwidth setting for bluetooth
+# All the traces in realtime bluetooth measurements were 
+# obtained while no performance sampling is running
 from __future__ import division
 import os
 import sys
@@ -13,6 +13,9 @@ import datetime
 import time
 import numpy as np
 import matplotlib.pyplot as plt
+import sklearn
+import cPickle as pickle
+from sklearn.linear_model import LinearRegression
 
 #####################################################################
 
@@ -36,19 +39,22 @@ def load_pwr(pwrfile):
 	return train_data
 
 # Read the time text file
-# The first two lines record the time stamps of turning on Wi-Fi
-# and connecting to AP
-# The rest lines record the beginning and ending of sending 
-# 1kB, 100kB, 1000kB, 10000kB packet
+# The first two lines record the time stamps of import libraries
+# and turning on Bluetooth
+# The rest lines record the beginning and ending of scanning, 
+# sending 1kB, 100kB, 1000kB, 10000kB packet
 def load_time(timefile):
     time_pre = []
     time_start = []
     time_end = []
     with open(timefile, "r") as f:
+        # time import
         line = f.readline()
         time_pre.append(float(line))
+        # time up
         line = f.readline()
         time_pre.append(float(line))
+
 	for line in f.readlines():
             elem0 = line.strip().split(',')[0]
     	    elem1 = line.strip().split(',')[1]
@@ -62,34 +68,35 @@ def load_time(timefile):
 ###################################################################
 def main():
     if len(sys.argv) == 1:
-        print "Please specify a version!"
-        sys.exit()
+        print "Please specify a model!"
+	sys.exit()
     else:
-        version = sys.argv[1]
+        version = sys.argv[1] 
 
-    pwr_filename = "./pwr_realtime/pwr_%s.txt" %version
-    time_filename = "./pwr_realtime/time_%s.txt" %version
+    pwr_filename = "./pwr_bt_realtime/pwr_%s.txt" %version
+    time_filename = "./pwr_bt_realtime/time_%s.txt" %version
 
     # read data
     meas_pwr = load_pwr(pwr_filename)
     time_pre, time_start, time_end = load_time(time_filename)
     ps = np.array(meas_pwr)
 
+    # plot
     plt.figure(figsize=(8,6), dpi=100)
     line1, = plt.plot(ps[:, 0], ps[:, 1], 'b-', label="Power Measurement")
     for t in time_pre:
         plt.axvline(x=t, color='brown', linestyle='--')
-    plt.axvline(x=time_start[0], color='g', linestyle='--', label="Start Sending")
-    plt.axvline(x=time_end[0], color='purple', linestyle='--', label="Finish Sending")
+    plt.axvline(x=time_start[0], color='g', linestyle='--', label="Start")
+    plt.axvline(x=time_end[0], color='purple', linestyle='--', label="Finish")
     for t in time_start:
         plt.axvline(x=t, color='g', linestyle='--')
     for t in time_end:
         plt.axvline(x=t, color='purple', linestyle='--')
     plt.xlabel("Time (seconds)")
     plt.ylabel("Power Consumption (W)")
-    plt.xlim(0.0, 40.0)
-    plt.ylim(3.0, 4.2)
-    plt.title("Wi-Fi Wakeup Power Consumption")
+    plt.xlim(0.0, 60.0)
+    plt.ylim(3.0, 4.0)
+    plt.title("Bluetooth Wakeup Power Consumption")
     plt.legend()
     plt.show()
 

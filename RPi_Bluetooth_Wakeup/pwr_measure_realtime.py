@@ -1,6 +1,10 @@
-# For single time power measurement in a serie
-# Store the measured data in ./pwr_measure/
-# Usage: python pwr_measure.py cpu_600
+# For realtime wakeup power measurement, need to specify
+# the version as a label
+# Store the measured data in ./pwr_realtime/
+# Usage: python pwr_measure.py 600_1000_nosample
+# 600MHz is the frequency, 1000bps is the bandwidth
+# bound, no sample means no performance sampling on the
+# running Pi
 import sys
 import os
 import serial, select
@@ -53,22 +57,16 @@ psu.write(":DATAout:ITEM 35,0\r\n"); item = "volt,curr,pf" # for more details
 #psu.write(":CURR:RANG 0.1\r\n") # Current range to minimum
 #psu.write(":CURR:RANG 1.0\r\n") # Current range to minimum
 
-elapsed_time_in_ms = 150 * 1000 # 150 secs
+execution_time_in_ms = 60 * 1000 # 60 secs
 version = None
 if len(sys.argv) == 2:
     version = sys.argv[1]
 
 filename = None
 if version is not None:
-<<<<<<< HEAD:RPi_CPU_model/pwr_measure.py
-	filename = "./pwr_measure/cpu_" + version + ".txt"
+	filename = "./pwr_realtime/pwr_%s.txt" %version
 else:
-	filename = "./pwr_measure/pwr_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
-=======
-	filename = "./pwr_bt_realtime/pwr_%s.txt" %version
-else:
-	filename = "./pwr_bt_realtime/pwr_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
->>>>>>> b43b89cff95636f6b17c4fa10be633edb49780a4:RPi_model/Measure_Pi2/pwr_measure_realtime.py
+	filename = "./pwr_realtime/pwr_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
 		".txt"
 f = open(filename, "w")
 
@@ -128,7 +126,7 @@ while True:
 		ii = 0
 		data = ""
 
-		if bSignaled or elapsed_time() > elapsed_time_in_ms:
+		if bSignaled or elapsed_time() >= execution_time_in_ms:
 			break
 
 		bTypeError = False
