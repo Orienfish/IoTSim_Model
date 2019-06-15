@@ -44,7 +44,7 @@ def load_pwr(pwrfile):
 	    pwr_data.append(new_vec)
 
 	    line = f.readline()
-	return pwr_data
+    return pwr_data
 
 def load_time(timefile):
     phase_list = [] # records other phase we test
