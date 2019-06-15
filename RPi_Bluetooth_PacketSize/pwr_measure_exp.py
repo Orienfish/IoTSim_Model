@@ -1,5 +1,5 @@
 # For single time power measurement in a serie
-# Store the measured data in ./pwr_measure/
+# Store the measured data in ./pwr_bt_exp/
 # Usage: python pwr_measure_exp.py 600
 import sys
 import os
