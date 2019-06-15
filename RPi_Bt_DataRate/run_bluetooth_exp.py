@@ -7,15 +7,8 @@ import time
 startTime = time.time()
 if (len(sys.argv) > 1):
     version = sys.argv[1]
-#    calib = sys.argv[2] # pwr or perf
 
-#if (calib == "pwr"):
 timefile = "./exp_bluetooth/time_" + version + ".txt"
-#elif (calib == "perf"):
-#    timefile = "./error_analysis/perf_time_" + version + ".txt"
-#    filename = "./error_analysis/perf_" + version + ".txt"
-#    EXEC_CMD = "bash ./get_cpu_usage.sh 0 > %s &" %filename
-#    os.system(EXEC_CMD)
 
 f = open(timefile, "w")
 
@@ -142,9 +135,4 @@ for size in SIZEPS:
         
 sock.close()
 f.close()
-#if (calib == "pwr"):
-#os.system("ssh pi@192.168.1.39 \"bash -c 'killall -9 bash'\"")
-#elif (calib == "perf"):
-#    KILL_CMD = "killall -9 bash"
-#    os.system(KILL_CMD)
 
