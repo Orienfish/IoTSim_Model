@@ -83,7 +83,7 @@ f.write("connect_idle,%f,%f\r\n" %(stTime - startTime, FinTime - startTime)) # i
 #########################################################
 # Sending different size of packets
 #########################################################
-SIZE = [200,500,1e3,2e3,5e3,1e4,2e4,5e4,1e5,2e5,5e5,1e6,2e6,5e6] # Byte
+SIZE = [200,500,1e3,2e3,5e3,1e4,2e4,5e4,1e5,2e5,5e5,1e6] # Byte
 BW = 1000
 CNT = 5
 
@@ -105,28 +105,6 @@ for size in SIZE:
         f.write("%d,%f,%f\r\n" %(size, stTime - startTime, FinTime - startTime))
         print i
 
-#########################################################
-# Sending packets at different bandwidth
-#########################################################
-"""
-SIZE = int(1e5) # Byte
-# 5kbps is the minimum, way too slow
-BW = [1e5,5e4,2e4,1e4,5e3,2e3,1e3,500,200,100,500,200,100,50,20] # kbps
-CNT = 1
-
-for bw in BW:
-    MSG = "A" * SIZE
-    print "Testing %d kbps" %bw
-    time.sleep(1.0)
-    SET_BW= "sudo bash /home/pi/Desktop/Target_Pi1/set_bw.sh %d" %bw
-    os.system(SET_BW)
-    for i in range(0, CNT):
-        time.sleep(4.0) # idle
-        stTime = time.time()
-        s.send(MSG)
-        FinTime = time.time()
-        f.write("%d,%f,%f\r\n" %(bw, stTime - startTime, FinTime - startTime))
-"""
 #########################################################
 # Finish
 #########################################################

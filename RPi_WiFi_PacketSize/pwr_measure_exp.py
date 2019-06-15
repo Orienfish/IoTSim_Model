@@ -64,9 +64,9 @@ execution_time_in_ms = time_sec * 1000 # seconds
 
 filename = None
 if version is not None:
-	filename = "./pwr_net_exp/pwr_%s.txt" %version
+	filename = "./packetsize_exp/pwr_%s.txt" %version
 else:
-	filename = "./pwr_net_exp/pwr_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
+	filename = "./packetsize_exp/pwr_" + datetime.datetime.now().strftime("%H%M%S%m%d%Y") + \
 		".txt"
 f = open(filename, "w")
 
