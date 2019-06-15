@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import sklearn
 import cPickle as pickle
 from sklearn.linear_model import LinearRegression
-# Usage: python exp_process.py size_600 # size_600 is version
+# Usage: python exp_process.py 600 # 600 is version
 
 #####################################################################
 def save_with_pickle(data, filename):
@@ -141,9 +141,9 @@ def plot_rt_pwr(ps, time_data):
 	    plt.axvline(x=ft, color='purple', linestyle='--')
     plt.xlabel("Time (seconds)")
     plt.ylabel("Power Consumption (W)")
-    plt.xlim(0, 100.0)
-    # plt.ylim(3.0, 3.5) # for 600MHz
-    plt.ylim(3.2, 4.0) # for 1200MHz
+    plt.xlim(0.0, 40.0)
+    plt.ylim(3.0, 3.5) # for 600MHz
+    # plt.ylim(3.2, 4.0) # for 1200MHz
     # plt.title("Wi-Fi Power Consumption")
     plt.legend()
     plt.show()
@@ -152,17 +152,16 @@ def plot_avg_pwr(test_list, pwr_list, t_list):
     fig, ax1 = plt.subplots()
     color = "tab:red"
     ax1.plot(test_list, pwr_list, color=color, marker='.')
-    # ax1.set_xlabel("Packet Size (B)")
-    ax1.set_xlabel("Bandwidth (kbps)")
-    ax1.set_ylabel("Wi-Fi Power Consumption (W)", color=color)
-    ax1.set_title("Wi-Fi Power Consumption and Sending Time")
+    ax1.set_xlabel("Packet Size (B)")
+    ax1.set_ylabel("Bluetooth Power Consumption (W)", color=color)
+    ax1.set_title("Bluetooth Power Consumption and Sending Time")
     ax1.set_xscale('log')
     ax1.tick_params(axis='y', labelcolor=color)
 
     ax2 = ax1.twinx()
     color = "tab:blue"
     ax2.plot(test_list, t_list, color=color, marker='v')
-    ax2.set_ylabel("Time to Send 5 Packets (s)", color=color)
+    ax2.set_ylabel("Time to Send 10 Packets (s)", color=color)
     ax2.set_xscale('log')
     ax2.tick_params(axis='y', labelcolor=color)
 
@@ -178,9 +177,9 @@ def main():
     else:
         version = sys.argv[1] 
 
-    pwr_filename = "./packetsize_exp/pwr_%s.txt" %version
-    time_filename = "./packetsize_exp/time_%s.txt" %version
-    result_filename = "./packetsize_exp/result_%s.txt" %version
+    pwr_filename = "./pwr_bt_exp/pwr_%s.txt" %version
+    time_filename = "./pwr_bt_exp/time_%s.txt" %version
+    result_filename = "./pwr_bt_exp/result_%s.txt" %version
 
     # read data
     meas_pwr = load_pwr(pwr_filename)
@@ -218,7 +217,7 @@ def main():
     res_f.close()
 	
     # plot
-    plot_rt_pwr(meas_pwr_array, time_data)
+    # plot_rt_pwr(meas_pwr_array, time_data)
     plot_avg_pwr(test_list, pwr_list, t_list)
 		
     
