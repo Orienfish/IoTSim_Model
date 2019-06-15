@@ -74,7 +74,7 @@ Experiment setup and results can be found in [here](Arduino_model/README.md), wh
 
 ### Raspberry Pi
 We build two versions of CPU power model of RPi. One model takes the CPU frequency and utilization as input, while the other uses detailed performance counter values. We use Linear Regression in the [Scikit-learn Library](https://scikit-learn.org/stable/). 
-In general, a power model is represented with a linear combination of the input parameters $e_i$ and coefficients $\beta_i$: ![LR](https://github.com/Orienfish/IoTSim_Model/blob/backup/LinearRegression.png), where c is the intercept which is highly related to the static power.
+In general, a power model is represented with a linear combination of the input parameters and coefficients: ![LR](https://github.com/Orienfish/IoTSim_Model/blob/backup/LinearRegression.png), where c is the intercept which is highly related to the static power.
 
 The frequency/utilization-based model is more abstract and can achieve around 3% estimation error. The performance counter-based model can reach less than 1% error, but in reality you may not be able to get such detailed metrics. 
 
