@@ -13,20 +13,15 @@ Each folder in this repo contain the codes and data for one experiment or one im
 ```
 ├── README.md                 // Help
 ├── Arduino_model             // Arduino CPU model, power, exec. time and temperature measurements
-│   ├── arduino_mlp     	  // Arduino code to run MLP application
-│   ├── rpi_powermeter		  // The python script used on RPi to collect power trace
+│   ├── arduino_mlp           // Arduino code to run MLP application
+│   ├── rpi_powermeter	      // The Python script used on RPi to collect power trace
 │   └── pwr_perf_temp_data    // Collected power, perf. (i.e. exec. time) and temperature data
-│							  // and several processing scripts
+│			      // and several processing scripts
 ├── RPi_Bt_DataRate           // Measurement of Bluetooth power on RPi under various data rate
-│   ├── arduino_mlp     	  // Arduino code to run MLP application
-│   ├── rpi_powermeter		  // The python script used on RPi to collect power trace
-│   └── pwr_perf_temp_data    // Collected power, perf. (i.e. exec. time) and temperature data
-├── trainenv_virf_v5.py       // Python class for virtual training environment. Interact with deep_q_network_virf_new.py.
-├── test_model_v.py           // Extra virtual test after virtual training.
-├── deep_q_network_real_train.py // DQN for practical training.
-├── realenv_train.py          // Python class for real training environment. Interact with deep_q_network_real_train.py.
-├── deep_q_network_real_test.py // DQN for practical testing.
-└── realenv_test.py           // Python class for real testing environment. Interact with deep_q_network_real_test.py. 
+│   ├── bt_rate_data          // Collected power and time data
+│   ├── bt_rate_process.py    // The Python script used to process and plot
+│   ├── rfcomm_server.py      // The Bluetooth server program running on remote machine
+│   └── run_bluetooth_exp.py  // The Python script run on target RPi to trigger connection and transmission
 ```
 
 ## CPU Power model
