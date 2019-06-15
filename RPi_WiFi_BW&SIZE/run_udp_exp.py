@@ -60,7 +60,7 @@ UDP_PORT = 5006
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 BW = [1e2, 2e2, 5e2, 1e3, 2e3, 5e3, 1e4, 2e4, 5e4, 1e5] # kbps
-# [1e3, 2e3, 5e3, 1e4, 2e4, 5e4, 1e5, 2e5, 5e5, 1e6]
+#BW = [1e3, 2e3, 5e3, 1e4, 2e4, 5e4, 1e5, 2e5, 5e5, 1e6]
 #SIZE = [1e3, 2e3, 5e3, 1e4, 2e4, 5e4, 5e4, 5e4, 5e4, 5e4] # Byte
 #T = [1, 1, 1, 1, 1, 1, 0.5, 0.25, 0.1, 0.05]
 SIZE = 1e4
