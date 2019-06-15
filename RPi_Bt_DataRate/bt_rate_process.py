@@ -164,9 +164,9 @@ def main():
     else:
         version = sys.argv[1] 
 
-    pwr_filename = "./pwr_%s.txt" %version
-    time_filename = "./time_%s.txt" %version
-    result_filename = "./result_%s.txt" %version
+    pwr_filename = "./bt_rate_data/pwr_%s.txt" %version
+    time_filename = "./bt_rate_data/time_%s.txt" %version
+    result_filename = "./bt_rate_data/result_%s.txt" %version
     
     # read data
     meas_pwr = load_pwr(pwr_filename)
