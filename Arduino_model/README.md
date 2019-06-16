@@ -26,6 +26,10 @@ A processing script `process.py` in this folder is responsible for getting total
 ```
 python process.py
 ```
+Or specify a power trace text file and run:
+```
+python process.py pwr_10_1.txt
+```
 Another script `draw.py` can visualize the power and temperature changes during running one workload. To get the power and temperature curves, use:
 ```
 python draw.py 10_1 # 10_1 is the version of the trace
