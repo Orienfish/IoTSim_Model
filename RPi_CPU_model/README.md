@@ -22,10 +22,12 @@ We use the `get_cpu_usage.sh` in `RPi_Useful_Scripts` folder to obtain frequency
 
 In the `model` folder, we leave 4 freq/util-based models, from `model.v1` to `model.v4`. The maximum average train error is 2.91% while the maximum error is 33.6%. Although they have various levels of error, the prediction preformance is similar. One example of the trained model is:
 
+```
 Coefficients of ./model/model.v4
 freq: 1.4995596404e-06 util: 0.0183259386149 intercept: 1.97313572567
 Score: 0.925133
 Error: avg: 0.025987 max: 0.332113
+```
 
 ## Performance Counter-based Model
 In this model, we take a lot of performance counter values as input. The power model is represented with a linear combination of the input parameters and coefficients: ![LR](https://github.com/Orienfish/IoTSim_Model/blob/backup/LinearRegression.png), where c is the intercept which is highly related to the static power.
@@ -34,14 +36,18 @@ We use `perf stat` instruction in `../RPi_Useful_Scripts/perf_script.sh` to obta
 
 In the `model` folder, we have 2 perf counter-based models, using various number of events. `model.perf_v1` uses only instructions and cache misses, resulting in 3.63% average error:
 
+```
 Coefficients of ./model/model.perf_v1
 cache-misses: 1.604158848953897e-07 instructions: 3.8251433694302514e-09 intercept: 3.1186404101507303
 Score: 0.792358
 Error: avg: 0.036643 max: 0.347124
+```
 
 `model.perf_v2` uses a bunch of performance events:
 
+```
 Coefficients of ./model/model.perf_v2
 L1-dcache-loads: 1.1201174772923045e-09 L1-dcache-stores: -3.0816554910780796e-10 branch-instructions: -2.89318560875291e-09 branch-misses: -8.559663917289132e-08 cache-misses: -1.4362203201178858e-07 cache-references: 1.505825052950235e-09 cpu-cycles: 2.0684120184486966e-09 instructions: 3.135143357712678e-10 r110: 1.6033898690248393e-07 r13C: 0.0 r1A2: 0.0 r1C2: 1.3949913999186216e-07 intercept: 3.096927605408612
 Score: 0.917879
 Error: avg: 0.024100 max: 0.300376
+```
