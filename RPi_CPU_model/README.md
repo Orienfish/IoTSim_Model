@@ -4,7 +4,7 @@ In this experiment, we try to construct two CPU power models for Raspberry Pi:
 - Performance Counter-based Model
 
 ## Experiment Setup
-We use two RPis: one running the workload as a target platform while cutting off all network, the other reading power traces from the [HIOKI 3334 Powermeter](https://www.hioki.com/en/products/detail/?product_key=5812). Follow the steps:
+We use two RPis: one running the workload as a target platform while cutting off all network, the other reading power traces from the [HIOKI 3334 Powermeter](https://www.hioki.com/en/products/detail/?product_key=5812). There are multiple steps to perform the measurement:
 
 - Set the frequency of the target RPi and cut off network connection.
 - Run `bash run_cpu_test.sh cpu_600` on the target RPi and `python pwr_measure.py cpu_600` on the measuring RPi at the same time. `cpu_600` is the version to distinguish different experiements.

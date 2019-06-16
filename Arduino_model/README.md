@@ -2,7 +2,7 @@
 In this experiment, we establish a CPU power model for Arduino while running various size of MLP. The implementation Of MLP is based on the [Neurona Library](https://www.arduinolibraries.info/libraries/neurona).
 
 ## Hardware Setup
-The circuit connection is shown as following;
+We use a RPi to read power traces from the [HIOKI 3334 Powermeter](https://www.hioki.com/en/products/detail/?product_key=5812). The Arduino is powered by a wire connected to the powermeter, thus the power traces can be collected. The circuit connection is shown as following;
 <div align=center><img width="800" height="400" src="https://github.com/Orienfish/IoTSim_Model/blob/master/Arduino_model/setup.png"/></div>
 
 Two signals: END_SIG and START_SIG are employed for synchronization. 
@@ -19,6 +19,14 @@ All the scripts for every device can be found in
 - arduino_mlp/arduino_mlp.ino runs on the Arduino.
 - rpi/serial_measurement_once.py runs on the RPi.
 - pwr_perf_temp_data folder contains the raw text files.
+
+To run the experiment, there are several steps:
+- upload the program to Arduino, make sure that the output of Arduino can be read by USB-TTL on the laptop.
+- connect Arduino to the powermeter.
+- when `Waiting for start signal...` displaying on the serial port of the laptop, start `serial_measurement_once.py` on the measuring RPi.
+- the power trace will be automically stored on RPi, while the time and temperature data need to be copied from the serial port of the laptop to a text file.
+
+## Processing Data
 
 One text file contains the power/temperature trace during running one workload. For example, `pwr_10_1.txt` contains the power trace of running MLP with 10 inputs and 1 hidden layers. The nodes in one hidden layer is fixed to 20.
 
