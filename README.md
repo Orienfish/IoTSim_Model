@@ -140,9 +140,9 @@ The time-varying curve is shown in the following Figure. Contrary to Wi-Fi, swit
 The running scripts, collected data and plotting graphs can be found in the `RPi_Bt_Wakeup` folder.
 
 | State          | Average Power Consumption (W) | Time (s) |
-|:---------------|:-----------------------------:|---------:|
+|:---------------|:-----------------------------:|:--------:|
 | Turn On        |  0.14				   	     | 0.2      |
-| Scan           |  0.03					     | 16*  |
+| Scan           |  0.03					     | 16*      |
 | Pair & Connect |  0.04						 | 2.6      |
 
 * Configurable by the user.
