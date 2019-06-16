@@ -114,7 +114,7 @@ The running scripts, collected data and plotting graphs can be found in the `RPi
 We are also interested in the “turning point” of packet size where the transmission power diverges from the baseline Wi-Fi power.  In our experiment, we fix the bandwidth at 2000kbps using the [wondershaper tool](https://github.com/magnific0/wondershaper) and create simple python scripts to trigger the transmission of packets varying in size. We record the transmission intervals of each size of a packet, only calculating the average power consumed in that period. The measured Wi-Fi power consumption and length of transmission interval are shown in the following Figure.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_WiFi_PacketSize` folder.
-<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_PacketSize/wifi_exp_600_2000kbps.png"/></div>
+<div align=center><img width="400" height="325" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_PacketSize/wifi_exp_600_2000kbps.png"/></div>
 
 #### Bandwidth (UDP)
 To have better control over packet rate and data rate, we adopt UDP instead of TCP in this and the following experiment. Here, we evaluate the average Wi-Fi power on two combinations of metrics: bandwidth and packet rate, bandwidth and data rate. The results are similar while using bandwidth and data rate exhibits more obvious changes. Thus we choose the latter combination to demonstrate here. Note that in this case we evaluate the average Wi-Fi power during a period of at least 5 seconds, instead of the interval between the beginning and end of transmission. Similarly, we estimate Wi-Fi power by subtracting idle CPU power from total power.
@@ -159,4 +159,4 @@ The running scripts, collected data and plotting graphs can be found in the `RPi
 While the previous experiment evaluates the transmission power between the beginning and end of transmission, we are also interested in the average power when transmitting at a certain data rate. In this case, we set an evaluation period of at least 5 seconds, during which the Raspberry Pi tries to send data at a certain rate through Bluetooth. The resulted transmission time larger than 5 seconds indicates that the Pi fails to reach that data rate. As the curve shown in the following Figure, higher data rate leads to higher average power consumption. It should be noted that the Bluetooth power consumption is much less than Wi-Fi.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_Bt_DataRate` folder.
-<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_DataRate/rate_1200_v1.png"/></div>
+<div align=center><img width="400" height="325" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_DataRate/rate_1200_v1.png"/></div>
