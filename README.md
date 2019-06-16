@@ -63,7 +63,7 @@ Before diving into the details of experiments, it is better to clarify the appro
 ### Arduino
 We construct a MLP workload on Arduino based on the [Neurona Library](https://www.arduinolibraries.info/libraries/neurona). We adjust the input data size and  the number of hidden layer, measuring its power, execution time and temperature (using the internal temperature sensor of Arduino). We found that the power consumption of Arduino is approximately constant, when running any size of MLP network.
 
-Experiment setup and results can be found in [here](Arduino_model/README.md), which is in the `Arduino_model` folder.
+Experiment setup and results can be found in [here](Arduino_model), which is in the `Arduino_model` folder.
 
 ### Raspberry Pi
 We build two versions of CPU power model of RPi. One model takes the CPU frequency and utilization as input, while the other uses detailed performance counter values. During the data collection, we cut all the network of RPi. We use Linear Regression in the [Scikit-learn Library](https://scikit-learn.org/stable/). 
@@ -71,7 +71,7 @@ In general, a power model is represented with a linear combination of the input 
 
 The frequency/utilization-based model is more abstract and can achieve around 3% estimation error. The performance counter-based model can reach less than 1% error, but in reality you may not be able to get such detailed metrics. 
 
-For more details, check [here](RPi_CPU_model/README.md), which is in the `RPi_CPU_model` folder.
+For more details, check [here](RPi_CPU_model), which is in the `RPi_CPU_model` folder.
 
 
 ## Network Models of Raspberry
