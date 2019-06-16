@@ -7,7 +7,8 @@ version=$1
 end=$((SECONDS+150))
 file="./cpu_measure/$version.txt"
 
-bash perf_script.sh > $file &
+# bash get_cpu_usage.sh 0.05 > $file & # for freq/util-based model
+bash perf_script.sh > $file & # for perf counter-based model
 sleep 10 # idle test time
 cd ./Raspberry_Pi_Benchmarks && bash ./run.sh
 bash ./run.sh
