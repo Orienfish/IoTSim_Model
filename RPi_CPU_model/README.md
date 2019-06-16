@@ -18,7 +18,7 @@ In this model, we take CPU frequency and utilization as inputs. The built model 
 predicted power = c0 + c1 * freq + c2 * util
 
 We use the `get_cpu_usage.sh` in `RPi_Useful_Scripts` folder to obtain frequency and utilization data. Following Figure shows the plot of measured power, predicted power, frequency and utilization with 600MHz frequency. It can be seen that our prediction approachs the authentic power curve well.
-<div align=center><img width="600" height="400" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_CPU_model/600MHz_v4.png"/></div>
+<div align=center><img width="800" height="660" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_CPU_model/600MHz_v4.png"/></div>
 
 In the `model` folder, we leave 4 freq/util-based models, from `model.v1` to `model.v4`. The maximum average train error is 2.91% while the maximum error is 33.6%. Although they have various levels of error, the prediction preformance is similar. One example of the trained model is:
 
