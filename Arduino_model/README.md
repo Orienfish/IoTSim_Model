@@ -12,7 +12,7 @@ Two signals: END_SIG and START_SIG are employed for synchronization.
 Arduino is powered by the battery port. Alternative serial port of pin 2 and 3 are used to send out time and temperature information. A USB-TTL adapter is used to read the information on desktop.
 
 Real wire connections are shown in the following picture:
-<div align=center><img width="300" height="400" src="https://github.com/Orienfish/IoTSim_Model/blob/master/Arduino_model/wire.jpeg"/></div>
+<div align=center><img width="400" height="400" src="https://github.com/Orienfish/IoTSim_Model/blob/master/Arduino_model/wire.jpeg"/></div>
 
 ## Software Setup
 All the scripts for every device can be found in 
