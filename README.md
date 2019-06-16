@@ -122,13 +122,13 @@ To have better control over packet rate and data rate, we adopt UDP instead of T
 To study the bandwidth model, we fix the data rate and then perform Wi-Fi transmission at different bandwidth. The results under 2kB/s and 1MB/s data rate are shown in the following Figures. It can be observed that, while sending at a low data rate, the Wi-Fi power consumption does not change much as the bandwidth increases. When large transmission data is requested, having higher bandwidth will cost more Wi-Fi power consumption. 
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_WiFi_BW&Rate` folder.
-<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_BW&Rate/bw.png"/></div>
+<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_BW%26SIZE/bw.png"/></div>
 
 #### Data Rate (UDP)
 In another UDP experiment, we fix the bandwidth in order to study the power behavior under different data rate. In (a) of the following Figure, with 1Mbps bandwidth limitation, the Wi-Fi power is bounded to a certain level as data rate increases and more time is needed to finish transmission. From (b) of the following Figure, it can be seen that when bandwidth limitation is not tight, all data could be successfully transmitted in the 5 seconds period, with the Wi-Fi power increasing linearly as data rate stepping up.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_WiFi_BW&Rate` folder.
-<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_BW&Rate/datarate.png"/></div>
+<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_BW%26SIZE/datarate.png"/></div>
 
 ### Bluetooth
 
@@ -147,16 +147,16 @@ The running scripts, collected data and plotting graphs can be found in the `RPi
 
 * Configurable by the user.
 
-<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_Wakeup/bt_realtime_600_label.png"/></div>
+<div align=center><img width="400" height="350" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_Wakeup/bt_realtime_600_label.png"/></div>
 
 #### Packet Size
 We further evaluate the relation between Bluetooth transmission power and the transmitted data size. We fix the frequency during the measurement. The following Figure shows the results for 600MHz and 1200MHz CPU frequency respectively. Similar as calculating Wi-Fi power, the Bluetooth power consumption here is estimated by subtracting the idle power base line from overall power consumption. We conclude that after around 10kB, the Bluetooth transmission power will start to increase.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_Bt_PacketSize` folder.
-<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_PacketSize/bt_pktsize.png"/></div>
+<div align=center><img width="800" height="350" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_PacketSize/bt_pktsize.png"/></div>
 
 #### Data Rate
 While the previous experiment evaluates the transmission power between the beginning and end of transmission, we are also interested in the average power when transmitting at a certain data rate. In this case, we set an evaluation period of at least 5 seconds, during which the Raspberry Pi tries to send data at a certain rate through Bluetooth. The resulted transmission time larger than 5 seconds indicates that the Pi fails to reach that data rate. As the curve shown in the following Figure, higher data rate leads to higher average power consumption. It should be noted that the Bluetooth power consumption is much less than Wi-Fi.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_Bt_DataRate` folder.
-<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_DataRage/rate_1200_v1.png"/></div>
+<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_DataRate/rate_1200_v1.png"/></div>
