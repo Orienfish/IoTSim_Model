@@ -108,7 +108,7 @@ It can be observed that, the discrepancy of average CPU utilization during trans
 To obtain a taste of power variation on Raspberry Pi’s Wi-Fi chip, we first evaluate the time-varying power pattern when we turn on the Wi-Fi on Raspberry Pi, connect to a common Access Point (AP) and then send various size of packets to the other terminal that also connects to the AP. The following Figure displays the power trace when Raspberry Pi is working at 1200MHz. We observe that the on-off state of Wi-Fi chip brings a power difference of approximately 0.14W (same value for 600MHz). Sending a larger packet will need longer time and consume more power aside from the base Wi-Fi power.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_WiFi_Wakeup` folder.
-<div align=center><img width="400" height="300" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_Wakeup/Wi-Fi_wakeup_1200_1000_nosample_label.png"/></div>
+<div align=center><img width="400" height="350" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_Wakeup/Wi-Fi_wakeup_1200_1000_nosample_label.png"/></div>
 
 #### Packet Size (TCP)
 We are also interested in the “turning point” of packet size where the transmission power diverges from the baseline Wi-Fi power.  In our experiment, we fix the bandwidth at 2000kbps using the [wondershaper tool](https://github.com/magnific0/wondershaper) and create simple python scripts to trigger the transmission of packets varying in size. We record the transmission intervals of each size of a packet, only calculating the average power consumed in that period. The measured Wi-Fi power consumption and length of transmission interval are shown in the following Figure.
