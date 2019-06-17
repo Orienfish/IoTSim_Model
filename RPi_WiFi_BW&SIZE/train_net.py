@@ -245,16 +245,31 @@ def main():
     
     fig = plt.figure()
     ax = plt.axes(projection='3d')
-    xline = data_matrix[:, 0]
-    yline = data_matrix[:, 1]
-    zline = data_matrix[:, n_evt]
-    ax.scatter3D(xline, yline, zline, color='blue', \
+
+    # Use scatter
+    #xline = data_matrix[:, 0]
+    #yline = data_matrix[:, 1]
+    #zline = data_matrix[:, n_evt]
+    #ax.scatter3D(xline, yline, zline, color='blue', \
+    #    label='Power Consumption')
+    #ax.scatter3D(xline, yline, pred, color='red', \
+    #    label='Predicted Power')
+
+    # Use wireframe
+    bw = np.array(bw_list)
+    rate = np.array(rate_list)
+    X, Y = np.meshgrid(rate, bw)
+    Z1 = np.resize(data_matrix[:, n_evt], (len(bw_list), len(rate_list)))
+    Z2 = np.resize(pred, (len(bw_list), len(rate_list)))
+    ax.plot_wireframe(X, Y, Z1, rstride=2, cstride=2, color='blue', \
         label='Power Consumption')
-    ax.scatter3D(xline, yline, pred, color='red', \
-        label='Predicted Power')
+    ax.plot_wireframe(X, Y, Z2, rstride=2, cstride=2, color='red', \
+        label='Power Prediction')
+
+    # Set title and labels
     ax.set_title('Wi-Fi Power Consumption and Predicted Power')
     ax.set_xlabel('Bandwidth (kbps)')
-    # ax.set_ylabel('Packet Rate (#/s)')
+    #ax.set_ylabel('Packet Rate (#/s)')
     ax.set_ylabel('Data Rate (B/s)')
     ax.legend()
     plt.show()
