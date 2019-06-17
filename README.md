@@ -105,13 +105,13 @@ It can be observed that, the discrepancy of average CPU utilization during trans
 ### Wi-Fi
 
 #### Wakeup (TCP)
-To obtain a taste of power variation on Raspberry Pi’s Wi-Fi chip, we first evaluate the time-varying power pattern when we turn on the Wi-Fi on Raspberry Pi, connect to a common Access Point (AP) and then send various size of packets to the other terminal that also connects to the AP. The following Figure displays the power trace when Raspberry Pi is working at 1200MHz. We observe that the on-off state of Wi-Fi chip brings a power difference of approximately 0.14W (same value for 600MHz). Sending a larger packet will need longer time and consume more power aside from the base Wi-Fi power.
+To obtain a taste of power variation on Raspberry Pi’s Wi-Fi chip, we first evaluate the time-varying power pattern when we turn on the Wi-Fi on Raspberry Pi, connect to a common Access Point (AP) and then send various size of packets to the other terminal that also connects to the AP. The following figure displays the power trace when Raspberry Pi is working at 1200MHz. We observe that the on-off state of Wi-Fi chip brings a power difference of approximately 0.14W (same value for 600MHz). Sending a larger packet will need longer time and consume more power aside from the base Wi-Fi power.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_WiFi_Wakeup` folder.
 <div align=center><img width="400" height="350" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_Wakeup/Wi-Fi_wakeup_1200_1000_nosample_label.png"/></div>
 
 #### Packet Size (TCP)
-We are also interested in the “turning point” of packet size where the transmission power diverges from the baseline Wi-Fi power.  In our experiment, we fix the bandwidth at 2000kbps using the [wondershaper tool](https://github.com/magnific0/wondershaper) and create simple python scripts to trigger the transmission of packets varying in size. We record the transmission intervals of each size of a packet, only calculating the average power consumed in that period. The measured Wi-Fi power consumption and length of transmission interval are shown in the following Figure.
+We are also interested in the “turning point” of packet size where the transmission power diverges from the baseline Wi-Fi power.  In our experiment, we fix the bandwidth at 2000kbps using the [wondershaper tool](https://github.com/magnific0/wondershaper) and create simple python scripts to trigger the transmission of packets varying in size. We record the transmission intervals of each size of a packet, only calculating the average power consumed in that period. The measured Wi-Fi power consumption and length of transmission interval are shown in the following figure.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_WiFi_PacketSize` folder.
 <div align=center><img width="400" height="325" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_PacketSize/wifi_exp_600_2000kbps.png"/></div>
@@ -119,23 +119,32 @@ The running scripts, collected data and plotting graphs can be found in the `RPi
 #### Bandwidth (UDP)
 To have better control over packet rate and data rate, we adopt UDP instead of TCP in this and the following experiment. Here, we evaluate the average Wi-Fi power on two combinations of metrics: bandwidth and packet rate, bandwidth and data rate. The results are similar while using bandwidth and data rate exhibits more obvious changes. Thus we choose the latter combination to demonstrate here. Note that in this case we evaluate the average Wi-Fi power during a period of at least 5 seconds, instead of the interval between the beginning and end of transmission. Similarly, we estimate Wi-Fi power by subtracting idle CPU power from total power.
 
-To study the bandwidth model, we fix the data rate and then perform Wi-Fi transmission at different bandwidth. The results under 2kB/s and 1MB/s data rate are shown in the following Figures. It can be observed that, while sending at a low data rate, the Wi-Fi power consumption does not change much as the bandwidth increases. When large transmission data is requested, having higher bandwidth will cost more Wi-Fi power consumption. 
+To study the bandwidth model, we fix the data rate and then perform Wi-Fi transmission at different bandwidth. The results under 2kB/s and 1MB/s data rate are shown in the following figures. It can be observed that, while sending at a low data rate, the Wi-Fi power consumption does not change much as the bandwidth increases. When large transmission data is requested, having higher bandwidth will cost more Wi-Fi power consumption. 
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_WiFi_BW&Rate` folder.
 <div align=center><img width="800" height="350" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_BW%26SIZE/bw.png"/></div>
 
 #### Data Rate (UDP)
-In another UDP experiment, we fix the bandwidth in order to study the power behavior under different data rate. In (a) of the following Figure, with 1Mbps bandwidth limitation, the Wi-Fi power is bounded to a certain level as data rate increases and more time is needed to finish transmission. From (b) of the following Figure, it can be seen that when bandwidth limitation is not tight, all data could be successfully transmitted in the 5 seconds period, with the Wi-Fi power increasing linearly as data rate stepping up.
+In another UDP experiment, we fix the bandwidth in order to study the power behavior under different data rate. In (a) of the following figure, with 1Mbps bandwidth limitation, the Wi-Fi power is bounded to a certain level as data rate increases and more time is needed to finish transmission. From (b) of the following figure, it can be seen that when bandwidth limitation is not tight, all data could be successfully transmitted in the 5 seconds period, with the Wi-Fi power increasing linearly as data rate stepping up.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_WiFi_BW&Rate` folder.
 <div align=center><img width="800" height="350" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_BW%26SIZE/datarate.png"/></div>
+
+#### Wi-Fi Power Model
+Similar as the linear model for RPi CPU, we try to build linear model for Wi-Fi power consumption taking bandwidth, packet rate or bandwidth, data rate. We feed the collected data into Linear Regression the from Scikit-learn Library, generating several models. As it shown in the following figure, It seems the linear model fits well on the rate axis, but does not fit well on the bandwidth axis. Our power measurement is more like an exponetial curve on the bandwidth axis. To train the model, go to the `RPi_WiFi_BW&SIZE` folder and run the script:
+```
+python train_net.py pkt_1200
+```
+where pkt_1200 is the version of the input data. A 3D plot of the real measurement and predictions will be generated automatically, while the built model and their coefficients can be found in the `RPi_WiFi_BW&SIZE/model/` folder.
+<div align=center><img width="500" height="400" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_WiFi_BW%26SIZE/bw_data_wpred.png"/></div>
+
 
 ### Bluetooth
 
 #### Wakeup
 We visualize the power trace after we turn on the bluetooth of Raspberry Pi, connect to a Bluetooth server, and send a certain size of packets. Our experimental script is built upon the [pybluez module](https://github.com/pybluez/pybluez) which provides APIs for discovering devices (i.e., scanning) and establishing client/server bluetooth connection based on the RFCOMM protocol. In Bluetooth experiments, we cut off all the Wi-Fi and Ethernet connections.
 
-The time-varying curve is shown in the following Figure. Contrary to Wi-Fi, switching on bluetooth causes little power difference. Scanning and requesting connection show distinguishable power increment, both of which are less than the power rise when sending 100kB and 1000kB packets. The average power consumption and lasting time of each state are summarized in the following Table.
+The time-varying curve is shown in the following figure. Contrary to Wi-Fi, switching on bluetooth causes little power difference. Scanning and requesting connection show distinguishable power increment, both of which are less than the power rise when sending 100kB and 1000kB packets. The average power consumption and lasting time of each state are summarized in the following Table. This could be used to build Bluetooth model for RPi in the simulator.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_Bt_Wakeup` folder.
 
@@ -150,13 +159,13 @@ The running scripts, collected data and plotting graphs can be found in the `RPi
 <div align=center><img width="400" height="350" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_Wakeup/bt_realtime_600_label.png"/></div>
 
 #### Packet Size
-We further evaluate the relation between Bluetooth transmission power and the transmitted data size. We fix the frequency during the measurement. The following Figure shows the results for 600MHz and 1200MHz CPU frequency respectively. Similar as calculating Wi-Fi power, the Bluetooth power consumption here is estimated by subtracting the idle power base line from overall power consumption. We conclude that after around 10kB, the Bluetooth transmission power will start to increase.
+We further evaluate the relation between Bluetooth transmission power and the transmitted data size. We fix the frequency during the measurement. The following figure shows the results for 600MHz and 1200MHz CPU frequency respectively. Similar as calculating Wi-Fi power, the Bluetooth power consumption here is estimated by subtracting the idle power base line from overall power consumption. We conclude that after around 10kB, the Bluetooth transmission power will start to increase.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_Bt_PacketSize` folder.
 <div align=center><img width="800" height="350" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_PacketSize/bt_pktsize.png"/></div>
 
 #### Data Rate
-While the previous experiment evaluates the transmission power between the beginning and end of transmission, we are also interested in the average power when transmitting at a certain data rate. In this case, we set an evaluation period of at least 5 seconds, during which the Raspberry Pi tries to send data at a certain rate through Bluetooth. The resulted transmission time larger than 5 seconds indicates that the Pi fails to reach that data rate. As the curve shown in the following Figure, higher data rate leads to higher average power consumption. It should be noted that the Bluetooth power consumption is much less than Wi-Fi.
+While the previous experiment evaluates the transmission power between the beginning and end of transmission, we are also interested in the average power when transmitting at a certain data rate. In this case, we set an evaluation period of at least 5 seconds, during which the Raspberry Pi tries to send data at a certain rate through Bluetooth. The resulted transmission time larger than 5 seconds indicates that the Pi fails to reach that data rate. As the curve shown in the following figure, higher data rate leads to higher average power consumption. It should be noted that the Bluetooth power consumption is much less than Wi-Fi.
 
 The running scripts, collected data and plotting graphs can be found in the `RPi_Bt_DataRate` folder.
 <div align=center><img width="400" height="325" src="https://github.com/Orienfish/IoTSim_Model/blob/master/RPi_Bt_DataRate/rate_1200_v1.png"/></div>
