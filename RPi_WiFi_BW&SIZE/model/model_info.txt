@@ -1,0 +1,20 @@
+
+Coefficients of ./model/model.pkt_1200
+bandwidth: -2.8112936692193507e-07 rate: 0.0012743752035176607 intercept: 0.11365853911075131
+Score: 0.308069
+Error: avg: 0.210263 max: 0.745726
+
+Coefficients of ./model/model.size_1200
+bandwidth: 3.311895549094872e-07 rate: 1.260286571354237e-07 intercept: 0.0883740830172752
+Score: 0.485641
+Error: avg: 0.232559 max: 1.408733
+
+Coefficients of ./model/model.pkt_1200
+bandwidth: -5.246031342361105e-07 rate: 0.0009066324253672774 product: 1.9477901385105828e-08 intercept: 0.11825532383763776
+Score: 0.364927
+Error: avg: 0.206834 max: 0.611398
+
+Coefficients of ./model/model.size_1200
+bandwidth: -1.6067361359886356e-08 rate: 9.130296550839144e-08 product: 1.8392845141323945e-12 intercept: 0.09493029359648111
+Score: 0.577226
+Error: avg: 0.226376 max: 1.095709

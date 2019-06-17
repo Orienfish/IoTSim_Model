@@ -1,9 +1,9 @@
-# Calculate and plot the average Wi-Fi power using UDP and 1200MHz
-# Either under various bandwidth and packet rate (pkt_1200)
-# Or under various bandwidth and data rate (size_1200)
+# Train and visualize prediction average power
 # 
 # Data is in the folder ./udp_data, generated images are in ./img
-# Usage: python udp_rate_process.py pkt_1200 # pkt_1200 is version
+# Usage: python train_net.py size_1200 size_1200
+# The first size_1200 is the version of data to train
+# The second size_1200 is the version of predicted model to import
 from __future__ import division
 import os
 import sys
@@ -11,8 +11,40 @@ import datetime
 import time
 import numpy as np
 import matplotlib.pyplot as plt
+import sklearn
+import cPickle as pickle
+from sklearn.linear_model import LinearRegression
+from mpl_toolkits.mplot3d import Axes3D
 
 version = None
+
+#####################################################################
+def save_with_pickle(data, filename):
+    """ save data to a file for future processing"""
+    with open(filename, 'wb') as f:
+        pickle.dump(data, f)
+
+def load_with_pickle(filename):
+    """ load data from a file"""
+    if not os.path.exists(filename):
+        return None
+
+    with open(filename, 'rb') as f:
+        return pickle.load(f)
+
+    return None
+
+# Save np array to csv
+def save_csv(filename, keys, data_matrix):
+    with open(filename, "w") as writer:
+        # write header
+        writer.write(','.join(keys))
+        writer.write('\n')
+
+        # write data in each row
+        for vec in data_matrix:
+            writer.write(','.join(["{0:.2f}".format(v) for v in vec]))
+            writer.write('\n')
 ###################################################################
 
 ###################################################################
@@ -121,92 +153,29 @@ def cal_avg_pwr(meas_pwr_array, tlist):
             total_energy += de
             # print "%f, %f, %f, %f" %(st, ft, dt, de)
     return total_energy / total_time, total_energy, total_time
-			
-###################################################################
 
 ###################################################################
-def plot_rt_pwr(ps, time_data):
-    plt.figure(figsize=(8,6), dpi=100)
-    line1, = plt.plot(ps[:, 0], ps[:, 1], 'b-', label="Power Measurement")
-    # first line label
-    for key in time_data:
-	for st, ft in time_data[key]:
-	    plt.axvline(x=st, color='g', linestyle='--')
-	    plt.axvline(x=ft, color='purple', linestyle='--')
-    plt.xlabel("Time (seconds)")
-    plt.ylabel("Power Consumption (W)")
-    plt.xlim(0, 200.0)
-    # plt.ylim(3.0, 3.5) # for 600MHz
-    plt.ylim(3.2, 4.0) # for 1200MHz
-    # plt.title("Wi-Fi Power Consumption")
-    plt.legend()
-    plt.show()
 
-def plot_pwr_at_bw(bw, rate_list, pwr_list, t_list):
-    global version
-    fig, ax1 = plt.subplots()
-    color = "tab:red"
-    ax1.plot(rate_list, pwr_list, color=color, marker='.')
-    # ax1.set_xlabel("Packet Size (B)")
-    ax1.set_xlabel("Data Rate (B/s)")
-    ax1.set_ylabel("Wi-Fi Power Consumption (W)", color=color)
-    ax1.set_title("Wi-Fi Power Consumption at %d kbps" %bw)
-    #ax1.set_xscale('log')
-    ax1.set_ylim(0.05, 0.4)
-    ax1.tick_params(axis='y', labelcolor=color)
-
-    ax2 = ax1.twinx()
-    color = "tab:blue"
-    ax2.plot(rate_list, t_list, color=color, marker='v')
-    ax2.set_ylabel("Transmission Time (s)", color=color)
-    #ax2.set_xscale('log')
-    ax2.set_ylim(0, 50)
-    ax2.tick_params(axis='y', labelcolor=color)
-
-    fig.tight_layout()
-    figname = "./img/%s_bw_%d.png" %(version, bw)
-    plt.savefig(figname, dpi=200)
-
-def plot_pwr_at_rate(rate, bw_list, pwr_list, t_list):
-    global version
-    fig, ax1 = plt.subplots()
-    color = "tab:red"
-    ax1.plot(bw_list, pwr_list, color=color, marker='.')
-    # ax1.set_xlabel("Packet Size (B)")
-    ax1.set_xlabel("bandwidth (kbps)")
-    ax1.set_ylabel("Wi-Fi Power Consumption (W)", color=color)
-    ax1.set_title("Wi-Fi Power Consumption at %d B/s" %rate)
-    ax1.set_xscale('log')
-    ax1.set_ylim(0.05, 0.4)
-    ax1.tick_params(axis='y', labelcolor=color)
-
-    ax2 = ax1.twinx()
-    color = "tab:blue"
-    ax2.plot(bw_list, t_list, color=color, marker='v')
-    ax2.set_ylabel("Transmission Time (s)", color=color)
-    ax2.set_xscale('log')
-    ax2.set_ylim(0, 500)
-    ax2.tick_params(axis='y', labelcolor=color)
-
-    fig.tight_layout()
-    figname = "./img/%s_rate_%d.png" %(version, rate)
-    plt.savefig(figname, dpi=200)
-
+###################################################################
+def getError(pred, msr):
+    err = np.absolute(pred - msr) / msr
+    maxErr = np.amax(err)
+    avgErr = np.mean(err)
+    return avgErr, maxErr			
 ###################################################################
 
 ###################################################################
 def main():
     global version
-    if len(sys.argv) == 1:
-        print "Please specify a version!"
+    if len(sys.argv) != 2:
+        print "Number of parameters is not right!"
 	sys.exit()
     else:
-        version = sys.argv[1] 
+        version = sys.argv[1]
 
     pwr_filename = "./udp_data/pwr_%s.txt" %(version)
     time_filename = "./udp_data/time_%s.txt" %(version)
-    result_filename = "./udp_data/result_%s.txt" %(version)
-    
+
     # read data
     meas_pwr = load_pwr(pwr_filename)
     phase_list, bw_list, rate_list, time_data = \
@@ -227,45 +196,68 @@ def main():
 	print "total energy: ", total_energy[key]
     	print "total time: ", total_time[key]
 
-    # log the result and get avg pwr
-    res_f = open(result_filename, "w")
+    # get the idle power
     idle_pwr = avg_pwr["idle"]
-    res_f.write("phase, avg pwr, total energy, total time\r\n")
-    for phase in phase_list:
-	res_f.write("%s,%f,%f,%f\r\n" %(phase, avg_pwr[phase], \
-	    total_energy[phase], total_time[phase]))
 
     print bw_list, rate_list
     bw_list.sort()
     rate_list.sort()
-    pwr_array, time_array = [], [] # 2-D array
-    for i in range(0, len(bw_list)):
-    	rate_pwr_list, rate_time_list = [], []
-    	for j in range(0, len(rate_list)):
-    	    label = str(bw_list[i]) + "," + str(rate_list[j]) 
-	    res_f.write("%d,%d,%f,%f,%f\r\n" %(bw_list[i], \
-                rate_list[j], avg_pwr[label], \
-                total_energy[label], total_time[label]))
-	    rate_pwr_list.append(avg_pwr[label] - idle_pwr)
-	    rate_time_list.append(total_time[label])
-        pwr_array.append(rate_pwr_list)
-        time_array.append(rate_time_list)
-        # substract idle power and get avg pwr
-    res_f.close()
-    pwr_array = np.array(pwr_array)
-    time_array = np.array(time_array)
-    
-    # plot
-    plot_rt_pwr(meas_pwr_array, time_data)
-    for i in range(0, len(bw_list)):
-    	print pwr_array[i, :]
-        plot_pwr_at_bw(bw_list[i], rate_list, pwr_array[i, :], \
-     	    time_array[i, :])
+    data_len = len(bw_list) * len(rate_list)
+    train_label = ["bandwidth", "rate", "product", "power"]
+    n_evt = len(train_label) - 1
+    data_matrix = np.zeros((data_len, len(train_label))) # 2-D array
+    print data_matrix.shape
 
-    for i in range(0, len(rate_list)):
-    	print pwr_array[:, i]
-        plot_pwr_at_rate(rate_list[i], bw_list, pwr_array[:, i], \
-    	    time_array[:, i])
+    k = 0
+    for i in range(0, len(bw_list)):
+    	for j in range(0, len(rate_list)):
+            data_matrix[k, 0] = bw_list[i]
+            data_matrix[k, 1] = rate_list[j]
+            data_matrix[k, 2] = bw_list[i] * rate_list[j]
+            label = str(bw_list[i]) + "," + str(rate_list[j]) 
+            data_matrix[k, n_evt] = avg_pwr[label] - idle_pwr
+            k += 1
+
+    save_csv("measurement_"+version+".csv", train_label, data_matrix)
+    clf = LinearRegression()
+    reg = clf.fit(data_matrix[:, :n_evt], data_matrix[:, n_evt])
+    pred = clf.predict(data_matrix[:, :n_evt])
+    score = clf.score(data_matrix[:, :n_evt], data_matrix[:, n_evt])
+    avgErr, maxErr = getError(pred, data_matrix[:, n_evt])
+    print("Score: %f" %score)
+    print("Error: avg: %f max: %f" %(avgErr, maxErr))
+
+    # Save model
+    new_model = "./model/model." + version
+    save_with_pickle(clf, new_model)
+    print "model save to", new_model
+
+    # Save coefficients
+    #with open("./model/model_info.txt", "a+") as f:
+    #    f.write("\r\nCoefficients of %s\r\n" %new_model)
+    #    for i in range(0, n_evt):
+    #        f.write("%s: " %train_label[i])
+    #        f.write("%s " %reg.coef_[i])
+    #    f.write("intercept: ")
+    #    f.write("%s" %reg.intercept_)
+    #    f.write("\r\nScore: %f\r\n" %score)
+    #    f.write("Error: avg: %f max: %f\r\n" %(avgErr, maxErr))
+    
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+    xline = data_matrix[:, 0]
+    yline = data_matrix[:, 1]
+    zline = data_matrix[:, n_evt]
+    ax.scatter3D(xline, yline, zline, color='blue', \
+        label='Power Consumption')
+    ax.scatter3D(xline, yline, pred, color='red', \
+        label='Predicted Power')
+    ax.set_title('Wi-Fi Power Consumption and Predicted Power')
+    ax.set_xlabel('Bandwidth (kbps)')
+    # ax.set_ylabel('Packet Rate (#/s)')
+    ax.set_ylabel('Data Rate (B/s)')
+    ax.legend()
+    plt.show()
     
 
 if __name__ == '__main__':
